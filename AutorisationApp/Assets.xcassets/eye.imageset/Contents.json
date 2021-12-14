@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "icons8-Material Outlined-85028-25-0.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "icons8-Material Outlined-85028-50-0.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "icons8-Material Outlined-85028-100-0.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
