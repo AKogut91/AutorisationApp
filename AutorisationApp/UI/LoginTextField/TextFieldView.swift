@@ -9,26 +9,37 @@ import Foundation
 import UIKit
 
 enum TextFieldType {
-    case email, password, comfirmPassword, errorEmail, errorPassword, errorComfirmPassword
+    case email, password, comfirmPassword
+    
+    func textForPlaceholder() -> String {
+            switch self {
+                case .email:
+                    return "Email"
+                case .password:
+                    return "Password"
+                case .comfirmPassword:
+                    return "Comfirm Password"
+            }
+        }
+    
 }
 
 class TextFieldView: UIView {
-    
-    @IBOutlet weak var backView: AView!
+
     @IBOutlet weak var textfield: ATextField!
     
     // MARK: - Lifecycle methods
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-
+    
     private func commonInit() {
         let bundle = Bundle.init(for: TextFieldView.self)
         if let viewToAdd = bundle.loadNibNamed(String(describing: TextFieldView.self), owner: self, options: nil), let contentView = viewToAdd.first as? UIView {
@@ -38,32 +49,44 @@ class TextFieldView: UIView {
             // UI Color
             contentView.backgroundColor = .clear
             textfield.backgroundColor = .clear
-            
         } else {
             print("Error init -> \(String(describing: TextFieldView.self)) ")
+        }
+    }
+    
+    func showHideErrorTextFieldBorder(error: Bool) {
+    
+        if error {
+            UIView.animate(withDuration: 0.3) {
+                self.textfield.showHideBorder(showing: true)
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.textfield.showHideBorder(showing: false)
+            }
         }
     }
     
     func style(type: TextFieldType, delegate: UITextFieldDelegate) {
         switch type {
         case .email:
-            backView.style(.contentBody)
-            textfield.style(as: .email, for: delegate, with: "Email")
+            textfield.style(as: .email, for: delegate,
+                            placeholder: type.textForPlaceholder(),
+                            backgroundColor: AColor.backgroundTextField,
+                            borderColor: .clear, cornerRadius: .regular)
+            
         case .password:
-            backView.style(.contentBody)
-            textfield.style(as: .password, for: delegate, with: "Password")
+            textfield.style(as: .password, for: delegate,
+                            placeholder: type.textForPlaceholder(),
+                            backgroundColor: AColor.backgroundTextField,
+                            borderColor: .clear, cornerRadius: .regular)
+            
         case .comfirmPassword:
-            backView.style(.contentBody)
-            textfield.style(as: .newPassword, for: delegate, with: "Comfirm Password")
-        case.errorEmail:
-            backView.style(.erroContentBody)
-            textfield.style(as: .email, for: delegate)
-        case.errorPassword:
-            backView.style(.erroContentBody)
-            textfield.style(as: .password, for: delegate)
-        case.errorComfirmPassword:
-            backView.style(.erroContentBody)
-            textfield.style(as: .newPassword, for: delegate)
+            textfield.style(as: .password, for: delegate,
+                            placeholder: type.textForPlaceholder(),
+                            backgroundColor: AColor.backgroundTextField,
+                            borderColor: .clear, cornerRadius: .regular)
         }
+        
     }
 }

@@ -55,13 +55,18 @@ class AView: UIView {
                 layer.borderColor = color.cgColor
                 layer.borderWidth = 1.0
             case .outlinedWarining:
-                backgroundColor = color
-                layer.borderColor = UIColor.red.cgColor
-                layer.borderWidth = 1.0
+                setupStyle(backgroundColor: color, borderColor: AColor.backgroundErrorText, borderWidth: 1.0)
             }
             
             layer.cornerRadius = cornerRadius.rawValue
             clipsToBounds = true
         }
+         
+        func setupStyle(backgroundColor: UIColor, borderColor: UIColor, borderWidth: Double) {
+            self.backgroundColor = backgroundColor
+            self.layer.borderColor = borderColor.cgColor
+            self.layer.borderWidth = borderWidth
+        }
+        
     }
 }

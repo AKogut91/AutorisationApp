@@ -13,7 +13,7 @@ class ATextField: UITextField {
     // MARK: - Fields
     
     private var hideButton: AButton?
-    private let kHideButtonHeight: CGFloat = 40.0
+    private let kHideButtonHeight: CGFloat = 30.0
     private let kDefaultFontSize: CGFloat = 20.0
     private let kMinimumFontSize: CGFloat = 14.0
     
@@ -22,50 +22,89 @@ class ATextField: UITextField {
     enum ATextFieldType {
         case email
         case password
-        case newPassword
+    }
+    
+    enum ATextFieldCornerRadius: CGFloat {
+        case none = 0.0
+        case regular = 8.0
+        case large = 20.0
     }
     
     // MARK: - Accessible methods
     
+    
+    var textPadding = UIEdgeInsets(
+            top: 10,
+            left: 20,
+            bottom: 10,
+            right: 20
+        )
+
+        override func textRect(forBounds bounds: CGRect) -> CGRect {
+            let rect = super.textRect(forBounds: bounds)
+            return rect.inset(by: textPadding)
+        }
+
+        override func editingRect(forBounds bounds: CGRect) -> CGRect {
+            let rect = super.editingRect(forBounds: bounds)
+            return rect.inset(by: textPadding)
+        }
+    
+    
     func style(as type: ATextFieldType,
                       for delegate: UITextFieldDelegate?,
-                      with placeholder: String? = nil) {
-        configure(for: delegate, with: placeholder)
-        switch type {
-
-        case .password:
-            addHideButton()
-            isSecureTextEntry = true
-            clearButtonMode = .never
-            returnKeyType = .go
-            keyboardType = .default
-            if #available(iOS 11.0, *) { textContentType = .password }
-            
-        case .newPassword:
-            addHideButton()
-            isSecureTextEntry = true
-            clearButtonMode = .never
-            returnKeyType = .go
-            keyboardType = .default
+               placeholder: String? = nil,
+               backgroundColor: UIColor = .clear,
+               borderColor: UIColor = .clear,
+               cornerRadius: ATextFieldCornerRadius) {
         
+        configure(for: delegate, with: placeholder)
+        
+        self.backgroundColor = backgroundColor
+        self.addBorder(1.0, color: UIColor.clear, cornerRadius: cornerRadius.rawValue)
+        
+        switch type {
+        case .password:
+                addHideButton()
+            self.isSecureTextEntry = true
+            self.clearButtonMode = .never
+            self.returnKeyType = .go
+            self.keyboardType = .URL
+            self.autocorrectionType = .no
+            self.textContentType = .oneTimeCode
+            setSpace()
+            
         case .email:
-            returnKeyType = .go
-            keyboardType = .emailAddress
+            self.returnKeyType = .go
+            self.keyboardType = .emailAddress
+            self.textContentType = .oneTimeCode
+            self.autocorrectionType = .no
+            setSpace()
         }
     }
     
+    private func setSpace() {
+       // self.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
+    }
     // MARK: - Helper methods
+    
+    func showHideBorder(showing: Bool) {
+        if showing {
+            self.addBorder(1.0, color: AColor.backgroundErrorText, cornerRadius: ATextFieldCornerRadius.regular.rawValue)
+        } else {
+            self.addBorder(1.0, color: UIColor.clear, cornerRadius: ATextFieldCornerRadius.regular.rawValue)
+        }
+    }
     
     private func configure(for delegate: UITextFieldDelegate?, with placeholder: String?) {
         self.delegate = delegate
         self.placeholder = placeholder
-        autocorrectionType = .no
-        clearButtonMode = .whileEditing
-        borderStyle = .none
-        textColor = .white
-        tintColor = .white
-        minimumFontSize = kMinimumFontSize
-        adjustsFontSizeToFitWidth = true
+        self.clearButtonMode = .whileEditing
+        self.borderStyle = .none
+        self.textColor = .white
+        self.tintColor = .white
+        self.minimumFontSize = kMinimumFontSize
+        self.adjustsFontSizeToFitWidth = true
     }
     
     private func addHideButton() {
@@ -75,14 +114,17 @@ class ATextField: UITextField {
         hideButton?.styleAsImage(with: UIImage(named: "eye"))
         hideButton?.addTarget(self, action: #selector(hideButtonTap), for: .touchUpInside)
         
-        guard let hideButton = hideButton else { return }
+        
+        hideButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -25, bottom: 0, right: 0)
+        hideButton?.frame = CGRect(x: CGFloat(self.frame.size.width - 40), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         
         rightView = hideButton
-        rightViewMode = .whileEditing
+        rightViewMode = .always
     }
     
     // MARK: - @objc methods
     
+    // Show and hide button in right corent textfield
     @objc private func hideButtonTap() {
         isSecureTextEntry.toggle()
         let newImage: UIImage? = isSecureTextEntry == true ? UIImage(named: "eye") : UIImage(named: "eye_puprupe")
@@ -90,7 +132,5 @@ class ATextField: UITextField {
             self?.hideButton?.styleAsImage(with: newImage)
         }
     }
-    
-    
     
 }

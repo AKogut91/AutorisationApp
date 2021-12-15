@@ -16,57 +16,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-gn-Khe">
-                                <rect key="frame" x="10" y="74" width="394" height="188"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eZo-hO-Zju" userLabel="EmailStack">
+                                <rect key="frame" x="16" y="54" width="382" height="56"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3C-SQ-Wp6" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="r3C-SQ-Wp6" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="80Q-7m-rpW"/>
+                                            <constraint firstAttribute="height" constant="56" id="jVN-WM-w4r"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SW8-aA-KzR" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="394" height="56"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="h5j-jq-3lm"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-GZ-4cg" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="132" width="394" height="56"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="KDO-Wj-NjB"/>
-                                        </constraints>
-                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it3-xO-PW4" customClass="ALabel" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="it3-xO-PW4" secondAttribute="trailing" id="ZpA-Qe-rtY"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PEf-Pc-nIc" userLabel="PasswordStack">
+                                <rect key="frame" x="16" y="118" width="382" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKo-va-Q4b" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="OxF-DM-n4V"/>
+                                        </constraints>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-UA-YS1" customClass="ALabel" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="382" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DKo-va-Q4b" firstAttribute="top" secondItem="PEf-Pc-nIc" secondAttribute="top" id="FLd-cI-BJZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="DKo-va-Q4b" secondAttribute="trailing" id="OOF-Nn-H3q"/>
+                                    <constraint firstAttribute="trailing" secondItem="qaZ-UA-YS1" secondAttribute="trailing" id="RCn-t7-AYo"/>
+                                    <constraint firstItem="qaZ-UA-YS1" firstAttribute="top" secondItem="DKo-va-Q4b" secondAttribute="bottom" constant="8" id="iIZ-84-0pI"/>
+                                    <constraint firstItem="DKo-va-Q4b" firstAttribute="leading" secondItem="PEf-Pc-nIc" secondAttribute="leading" id="lFW-1D-ulh"/>
+                                    <constraint firstItem="qaZ-UA-YS1" firstAttribute="leading" secondItem="PEf-Pc-nIc" secondAttribute="leading" id="qTY-lf-qmt"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3zw-38-8G0">
+                                <rect key="frame" x="16" y="182" width="382" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFx-5T-QLq" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="Dn5-lw-Ulw"/>
+                                        </constraints>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkl-VB-dS1" customClass="ALabel" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="382" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MFx-5T-QLq" firstAttribute="top" secondItem="3zw-38-8G0" secondAttribute="top" id="7QM-BV-wQy"/>
+                                    <constraint firstAttribute="bottom" secondItem="gkl-VB-dS1" secondAttribute="bottom" id="N2J-eM-n4H"/>
+                                    <constraint firstItem="gkl-VB-dS1" firstAttribute="leading" secondItem="3zw-38-8G0" secondAttribute="leading" id="OGG-kJ-O49"/>
+                                    <constraint firstAttribute="trailing" secondItem="MFx-5T-QLq" secondAttribute="trailing" id="QHB-cz-8wS"/>
+                                    <constraint firstAttribute="trailing" secondItem="gkl-VB-dS1" secondAttribute="trailing" id="WZZ-lw-9tP"/>
+                                    <constraint firstItem="MFx-5T-QLq" firstAttribute="leading" secondItem="3zw-38-8G0" secondAttribute="leading" id="qvH-vc-bVN"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ak9-gn-Khe" secondAttribute="bottom" constant="600" id="Nbv-1t-Egz"/>
-                            <constraint firstItem="ak9-gn-Khe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Onj-F5-9Rq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ak9-gn-Khe" secondAttribute="trailing" constant="10" id="txh-Tz-GvY"/>
-                            <constraint firstItem="ak9-gn-Khe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yaJ-Zp-Msj"/>
+                            <constraint firstItem="3zw-38-8G0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NLK-Kb-X7V"/>
+                            <constraint firstItem="3zw-38-8G0" firstAttribute="top" secondItem="PEf-Pc-nIc" secondAttribute="bottom" constant="8" symbolic="YES" id="NWM-xb-NSQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3zw-38-8G0" secondAttribute="trailing" constant="16" id="Qi3-hC-TIC"/>
+                            <constraint firstItem="eZo-hO-Zju" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RQF-Xi-F1F"/>
+                            <constraint firstItem="PEf-Pc-nIc" firstAttribute="top" secondItem="eZo-hO-Zju" secondAttribute="bottom" constant="8" id="Un3-uw-1PB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PEf-Pc-nIc" secondAttribute="trailing" constant="16" id="YSY-TR-SAg"/>
+                            <constraint firstItem="PEf-Pc-nIc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b39-ig-XzD"/>
+                            <constraint firstItem="eZo-hO-Zju" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bxY-rI-zRB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eZo-hO-Zju" secondAttribute="trailing" constant="16" id="gcb-YN-DiX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="comfirPassword" destination="cWt-GZ-4cg" id="QwI-s5-ihH"/>
+                        <outlet property="comfirmPasswordTextField" destination="MFx-5T-QLq" id="2UO-98-nYn"/>
+                        <outlet property="emailErrorLabel" destination="it3-xO-PW4" id="1XO-PT-a5P"/>
                         <outlet property="emailTextField" destination="r3C-SQ-Wp6" id="7dx-Zi-iSd"/>
-                        <outlet property="password" destination="SW8-aA-KzR" id="ud1-HH-9UU"/>
+                        <outlet property="errorComfirmPasswordLabel" destination="gkl-VB-dS1" id="Ejf-rQ-ZLC"/>
+                        <outlet property="errorPasswordLabel" destination="qaZ-UA-YS1" id="CPg-cj-Fxw"/>
+                        <outlet property="passwordTextField" destination="DKo-va-Q4b" id="qcf-bv-32B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
+            <point key="canvasLocation" x="-410.14492753623193" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
