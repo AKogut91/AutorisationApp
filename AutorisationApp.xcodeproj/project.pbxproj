@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050F85D427707ED00085ADB1 /* ATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F85D327707ED00085ADB1 /* ATextView.swift */; };
 		0530DC3C2768EE4F00EF4548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */; };
 		0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */; };
 		0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3F2768EE4F00EF4548 /* ViewController.swift */; };
@@ -28,9 +29,13 @@
 		0530DC762769F56600EF4548 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC752769F56600EF4548 /* String+.swift */; };
 		0530DC99276A940700EF4548 /* ALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC98276A940700EF4548 /* ALabel.swift */; };
 		0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9C276AA74100EF4548 /* UILabel+.swift */; };
+		0530DCA0276B499200EF4548 /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* ValidatorService.swift */; };
+		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
+		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050F85D327707ED00085ADB1 /* ATextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATextView.swift; sourceTree = "<group>"; };
 		0530DC382768EE4F00EF4548 /* AutorisationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutorisationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +59,9 @@
 		0530DC752769F56600EF4548 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0530DC98276A940700EF4548 /* ALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALabel.swift; sourceTree = "<group>"; };
 		0530DC9C276AA74100EF4548 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		0530DC9F276B499200EF4548 /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
+		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
+		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 				0530DC7127693C3F00EF4548 /* ATextField.swift */,
 				0530DC7327693F4600EF4548 /* AButton.swift */,
 				0530DC98276A940700EF4548 /* ALabel.swift */,
+				050F85D327707ED00085ADB1 /* ATextView.swift */,
+				05BB4BC12770A07800207FC2 /* AFont.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -115,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				0530DC542768F33900EF4548 /* UITextField+.swift */,
+				05D28680276CBA2B00078BB3 /* UIButton+.swift */,
 				0530DC5C2768F5EF00EF4548 /* UIViewController+.swift */,
 				0530DC632769000300EF4548 /* UIView+.swift */,
 				0530DC6D2769108000EF4548 /* UIColor+.swift */,
@@ -155,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0530DC572768F3C000EF4548 /* Logger.swift */,
+				0530DC9F276B499200EF4548 /* ValidatorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -250,15 +262,19 @@
 			files = (
 				0530DC7227693C3F00EF4548 /* ATextField.swift in Sources */,
 				0530DC6C27690E2E00EF4548 /* AColor.swift in Sources */,
+				0530DCA0276B499200EF4548 /* ValidatorService.swift in Sources */,
+				050F85D427707ED00085ADB1 /* ATextView.swift in Sources */,
 				0530DC5D2768F5EF00EF4548 /* UIViewController+.swift in Sources */,
 				0530DC582768F3C000EF4548 /* Logger.swift in Sources */,
 				0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */,
+				05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */,
 				0530DC3C2768EE4F00EF4548 /* AppDelegate.swift in Sources */,
 				0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */,
 				0530DC6E2769108000EF4548 /* UIColor+.swift in Sources */,
 				0530DC762769F56600EF4548 /* String+.swift in Sources */,
 				0530DC99276A940700EF4548 /* ALabel.swift in Sources */,
 				0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */,
+				05BB4BC22770A07800207FC2 /* AFont.swift in Sources */,
 				0530DC552768F33900EF4548 /* UITextField+.swift in Sources */,
 				0530DC642769000300EF4548 /* UIView+.swift in Sources */,
 				0530DC5B2768F3F800EF4548 /* BaseViewController.swift in Sources */,

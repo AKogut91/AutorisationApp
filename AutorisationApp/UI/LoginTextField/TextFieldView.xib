@@ -10,34 +10,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
             <connections>
-                <outlet property="textfield" destination="HZn-9h-hKN" id="edH-PG-qrc"/>
+                <outlet property="errorLabel" destination="Q9Y-LC-Jsy" id="VjG-wZ-ABq"/>
+                <outlet property="textfield" destination="5l8-Xo-Elk" id="D54-hb-cdf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZn-9h-hKN" customClass="ATextField" customModule="AutorisationApp" customModuleProvider="target">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aJ6-X0-ICf">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5l8-Xo-Elk" customClass="ATextField" customModule="AutorisationApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="NSw-OU-tBW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-LC-Jsy" customClass="ALabel" customModule="AutorisationApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="56" width="414" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="414" id="Vao-vB-tk5"/>
-                        <constraint firstAttribute="height" constant="56" id="fyQ-nK-5Cn"/>
+                        <constraint firstAttribute="bottom" secondItem="Q9Y-LC-Jsy" secondAttribute="bottom" id="1VQ-1q-gGP"/>
+                        <constraint firstAttribute="trailing" secondItem="Q9Y-LC-Jsy" secondAttribute="trailing" id="EO7-cV-iak"/>
+                        <constraint firstItem="Q9Y-LC-Jsy" firstAttribute="leading" secondItem="aJ6-X0-ICf" secondAttribute="leading" id="deI-RG-YV5"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="linkColor"/>
             <constraints>
-                <constraint firstItem="HZn-9h-hKN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="6mn-WG-HfT"/>
-                <constraint firstItem="HZn-9h-hKN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bTl-WV-f3V"/>
-                <constraint firstAttribute="bottom" secondItem="HZn-9h-hKN" secondAttribute="bottom" id="gse-aX-fc2"/>
+                <constraint firstItem="aJ6-X0-ICf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="4Uz-Uz-F6z"/>
+                <constraint firstItem="aJ6-X0-ICf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oUI-bl-hgw"/>
+                <constraint firstAttribute="bottom" secondItem="aJ6-X0-ICf" secondAttribute="bottom" id="vX2-lx-ygZ"/>
+                <constraint firstItem="aJ6-X0-ICf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yxl-Ds-vYD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="86.956521739130437" y="-215.29017857142856"/>
+            <point key="canvasLocation" x="86.956521739130437" y="-215.625"/>
         </view>
     </objects>
     <resources>

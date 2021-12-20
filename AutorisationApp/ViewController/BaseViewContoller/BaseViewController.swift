@@ -13,7 +13,6 @@ class BaseViewController: UIViewController {
     var onKeyBoardToggle: ((CGFloat) -> Void)?
     let logger = Logger()
     
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         printVCLife()

@@ -16,7 +16,7 @@ class AButton: UIButton {
         didSet { alpha = isEnabled ? 1.0 : 0.25 }
     }
     
-     lazy var activityIndicator: UIActivityIndicatorView = {
+    lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = .white
@@ -29,20 +29,36 @@ class AButton: UIButton {
     
     // MARK: - Declarations
     
-     enum ButtonStyle {
+    enum ButtonStyle {
+        case standart
+        case socialLogin
         case primary
         case attention
     }
     
-     enum ButtonCornerStyle: CGFloat {
+    enum SocialButtonStyle: String {
+        case apple
+        case google
+        case none
+    }
+    
+    enum ButtonCornerStyle: CGFloat {
         case plain = 0.0
-        case `default` = 20.0
+        case `default` = 25
+        
     }
     
     // MARK: - Accessible methods
     
-     func style(buttonStyle: ButtonStyle, buttonCornerStyle: ButtonCornerStyle, text: String?) {
+    func style(buttonStyle: ButtonStyle, buttonCornerStyle: ButtonCornerStyle, text: String?) {
+        
         switch buttonStyle {
+        case .standart:
+            backgroundColor = AColor.purpleColor
+            setTitleColor(.white, for: .normal)
+        case .socialLogin:
+            backgroundColor = AColor.backgroundTextField
+            setTitleColor(.white, for: .normal)
         case .primary:
             backgroundColor = .white
             setTitleColor(.white, for: .normal)
@@ -51,75 +67,34 @@ class AButton: UIButton {
             setTitleColor(.white, for: .normal)
         }
         
-        //titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
         layer.cornerRadius = buttonCornerStyle.rawValue
         setTitle(text, for: .normal)
     }
     
-     func styleAsPrimary(with text: String?) {
-        layer.cornerRadius = 20
-         backgroundColor = .white
-        setTitle(text, for: .normal)
-        setTitleColor(.white, for: .normal)
-        //titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
-    }
-    
-     func styleAsSecondary(with text: String?) {
-        layer.cornerRadius = 20
-         backgroundColor = .white
-        setTitle(text, for: .normal)
-        setTitleColor(.white, for: .normal)
-         //titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
-    }
-    
-     func styleAsText(with text: String?) {
-        backgroundColor = .clear
-        setTitle(text, for: .normal)
-         setTitleColor(.white, for: .normal)
-         // titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
-    }
-    
-     func styleAsList(with text: String?) {
-        backgroundColor = .white
-        setTitle(text, for: .normal)
-         setTitleColor(.white, for: .normal)
-        setTitleColor(.white, for: .selected)
-        setTitleColor(.white, for: .highlighted)
-        //titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
-    }
-    
-     func styleAsPlain(with text: String?) {
-         backgroundColor = .white
-        setTitle(text, for: .normal)
-        setTitleColor(.white, for: .normal)
-        //titleLabel?.font = UIFont.rounded(ofSize: 17, weight: .bold)
-        tintColor = .white
-    }
-    
-     func styleAsImage(with image: UIImage?) {
+    func styleAsImage(with image: UIImage?) {
         backgroundColor = .clear
         setTitle(nil, for: .normal)
         setImage(image, for: .normal)
-         tintColor = .white
+        tintColor = .white
     }
     
-     func performIndicated(action: @escaping (@escaping () -> Void) -> Void) {
+    func performIndicated(action: @escaping (@escaping () -> Void) -> Void) {
         startIndicating { [weak self] in action { self?.stopIndicating() }}
     }
     
-     func startIndicating() {
+    func startIndicating() {
         isEnabled = false
         activityIndicator.startAnimating()
     }
     
-     func stopIndicating() {
+    func stopIndicating() {
         activityIndicator.stopAnimating()
         isEnabled = true
     }
     
     // MARK: - Helper methods
     
-     func startIndicating(_ action: @escaping () -> Void) {
+    func startIndicating(_ action: @escaping () -> Void) {
         isEnabled = false
         activityIndicator.startAnimating()
         action()

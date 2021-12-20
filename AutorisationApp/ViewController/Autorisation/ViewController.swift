@@ -7,147 +7,109 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
-    
+class ViewController: BaseViewController  {
+   
+    @IBOutlet weak private var topLabel: ALabel!
+    @IBOutlet weak private var topLabelFooter: ALabel!
     @IBOutlet weak private var emailTextField: TextFieldView!
-    @IBOutlet weak private var emailErrorLabel: ALabel!
     @IBOutlet weak private var passwordTextField: TextFieldView!
-    @IBOutlet weak private var errorPasswordLabel: ALabel!
     @IBOutlet weak private var comfirmPasswordTextField: TextFieldView!
-    @IBOutlet weak private var errorComfirmPasswordLabel: ALabel!
+    @IBOutlet weak private var privatePolicyTextView: ATextView!
+    @IBOutlet weak private var singUp: AButton!
+    @IBOutlet weak private var signInSocialMediaLabel: ALabel!
+    @IBOutlet weak private var singInApple: AButton!
+    @IBOutlet weak private var singInGoogle: AButton!
+    @IBOutlet weak private var loginTextView: ATextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextViewFieldAndLabel()
+        setupLabel()
+        setupButton()
+        setupTextView()
     }
     
+    // MARK: - Setup
+    
     private func setTextViewFieldAndLabel() {
-        
         emailTextField.backgroundColor = .clear
         passwordTextField.backgroundColor = .clear
         comfirmPasswordTextField.backgroundColor = .clear
         
-        emailTextField.style(type: .email, delegate: self)
-        passwordTextField.style(type: .password, delegate: self)
-        comfirmPasswordTextField.style(type: .comfirmPassword,  delegate: self)
+        emailTextField.style(type: .email, placeholder: "Email")
+        passwordTextField.style(type: .password, placeholder: "Password")
+        comfirmPasswordTextField.style(type: .comfirmPassword(passwordTextField), placeholder: "Comfirm Password")
         
-        emailErrorLabel.style(type: .email)
-        errorPasswordLabel.style(type: .password)
-        errorComfirmPasswordLabel.style(type: .comfirmPassword)
-        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        comfirmPasswordTextField.delegate = self
     }
     
-    // MARK: - Animation for TextFied and Label
-    private func showHideError(type: TextFieldType, isShowError: Bool) {
-        
-        UIView.animate(withDuration: 0.33) { [unowned self] in
-            switch type {
-            case .email:
-                if isShowError {
-                    self.emailErrorLabel.showHideErrorLabel(isHidden: false, alpha: 1)
-                    self.emailTextField.showHideErrorTextFieldBorder(error: true)
-                } else {
-                    
-                    self.emailErrorLabel.showHideErrorLabel(isHidden: true, alpha: 0)
-                    self.emailTextField.showHideErrorTextFieldBorder(error: false)
-                }
-                
-            case .password:
-                
-                if isShowError {
-                    self.errorPasswordLabel.showHideErrorLabel(isHidden: false, alpha: 1)
-                    self.passwordTextField.showHideErrorTextFieldBorder(error: true)
-                } else {
-                    self.errorPasswordLabel.showHideErrorLabel(isHidden: true, alpha: 0)
-                    self.passwordTextField.showHideErrorTextFieldBorder(error: false)
-                }
-            case .comfirmPassword:
-                
-                if isShowError {
-                    self.errorComfirmPasswordLabel.showHideErrorLabel(isHidden: false, alpha: 1)
-                    self.comfirmPasswordTextField.showHideErrorTextFieldBorder(error: true)
-                } else {
-                    self.errorComfirmPasswordLabel.showHideErrorLabel(isHidden: true, alpha: 0)
-                    self.comfirmPasswordTextField.showHideErrorTextFieldBorder(error: false)
-                }
-            }
-            self.view.layoutIfNeeded()
-        }
+    private func setupLabel() {
+        topLabel.style(type: .top, text: "Create account")
+        topLabelFooter.style(type: .header, text: "Let’s create an account to save your results and secure your journal.")
+        signInSocialMediaLabel.style(type: .fotter, text: "or sign up with social media account:")
     }
+    
+    func setupTextView() {
+        
+        privatePolicyTextView.aTextViewDelegate = self
+        loginTextView.aTextViewDelegate = self
+        
+        privatePolicyTextView.style(type: .undeline,
+                                    text: "By continuing, you agree with Privacy Policy & Terms of Use.")
+        privatePolicyTextView.addAttr((text: "Privacy Policy", type: .link, "111"))
+        privatePolicyTextView.addAttr((text: "Privacy Policy", type: .color, AColor.purpleColor))
+        
+        privatePolicyTextView.addAttr((text: "Terms of Use.", type: .link, "222"))
+        privatePolicyTextView.addAttr((text: "Terms of Use.", type: .color, AColor.purpleColor))
+        privatePolicyTextView.setup()
+        
+        loginTextView.style(type: .undeline,
+                            text: "Already have an account? Log in")
+        loginTextView.addAttr((text: "Log in", type: .link, "333"))
+        loginTextView.addAttr((text: "Log in", type: .color, AColor.purpleColor))
+        loginTextView.setup()
+    }
+    
+    private func setupButton() {
+        singUp.style(buttonStyle: .standart, buttonCornerStyle: .default, text: "Sign up")
+        singInApple.style(buttonStyle: .socialLogin, buttonCornerStyle: .default, text: "Sign up with Apple")
+        singInGoogle.style(buttonStyle: .socialLogin, buttonCornerStyle: .default, text: "Sign up with Google")
+    }
+    
+    // MARK: - Actions
+  
+
 }
 
-extension ViewController: UITextFieldDelegate {
+// MARK: - TextFieldViewDelegate
+extension ViewController: TextFieldViewDelegate {
     
-    private func switchFields(textField: UITextField) {
-        switch textField {
-        case emailTextField.textfield:
-            passwordTextField.textfield.becomeFirstResponder()
-        case passwordTextField.textfield:
-            comfirmPasswordTextField.textfield.becomeFirstResponder()
-        case comfirmPasswordTextField.textfield:
-            comfirmPasswordTextField.textfield.becomeFirstResponder()
-        default:
-            break
+    func shouldReturn(_ sender: TextFieldView) -> Bool {
+        if let view = self.view.viewWithTag(sender.tag + 1) {
+            view.becomeFirstResponder()
+        } else {
+            sender.resignFirstResponder()
         }
+        return false
+    }
+
+}
+
+// MARK: - ATextViewDelegate
+extension ViewController: ATextViewDelegate {
+    
+    func showLoging() {
+        self.showComingSoonAlert()
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        
-        if textField == emailTextField.textfield {
-            if let email = textField.text {
-                if !email.isEmail {
-                    showHideError(type: .email, isShowError: true)
-                } else {
-                    showHideError(type: .email, isShowError: false)
-                }
-            }
-        }
-        
-        // if textField == password.textfield {
-        //     self.logger.Log()
-        // }
+    func showPrivatePolicy() {
+        self.showComingSoonAlert()
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if textField == comfirmPasswordTextField.textfield {
-            let comfirPasswordStr = textField.text ?? ""
-            let passwordStr = self.passwordTextField.textfield.text ?? ""
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                
-                if comfirPasswordStr.count > (passwordStr.count / 2) {
-                    let comfPass = textField.text ?? ""
-                    
-                    if comfPass == passwordStr {
-                        self.showHideError(type: .comfirmPassword, isShowError: false)
-                        self.logger.Log()
-                    } else {
-                        
-                        if comfPass.isEmpty {
-                            self.showHideError(type: .comfirmPassword, isShowError: false)
-                            self.logger.Log()
-                            
-                        } else {
-                            self.showHideError(type: .comfirmPassword, isShowError: true)
-                            self.logger.Log()
-                        }
-                    }
-                    
-                } else {
-                    self.showHideError(type: .comfirmPassword, isShowError: false)
-                    self.logger.Log()
-                }
-            }
-            
-        }
-        return true
+    func showTermsofUse() {
+        self.showComingSoonAlert()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switchFields(textField: textField)
-        return true;
-    }
-    
 }
 
