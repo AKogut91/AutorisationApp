@@ -99,17 +99,18 @@ extension ViewController: TextFieldViewDelegate {
 
 // MARK: - ATextViewDelegate
 extension ViewController: ATextViewDelegate {
-    
-    func showLoging() {
-        self.showComingSoonAlert()
-    }
-    
-    func showPrivatePolicy() {
-        self.showComingSoonAlert()
-    }
-    
-    func showTermsofUse() {
-        self.showComingSoonAlert()
+    func didSelected(item: String) {
+        switch item {
+        case "111":
+            self.showComingSoonAlert()
+        case "222":
+            self.showComingSoonAlert()
+        case "333":
+            self.showComingSoonAlert()
+        default:
+            print("")
+            
+        }
     }
 }
 

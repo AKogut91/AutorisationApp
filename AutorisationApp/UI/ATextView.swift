@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 protocol ATextViewDelegate: AnyObject {
-    func showLoging()
-    func showPrivatePolicy()
-    func showTermsofUse()
+    func didSelected(item: String)
 }
 
 class ATextView: UITextView, UITextViewDelegate {
@@ -55,7 +53,7 @@ class ATextView: UITextView, UITextViewDelegate {
         
         let fullRange = NSMakeRange(0, attributedOriginalText.length)
         attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: AColor.topTextColor, range: fullRange)
-        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: FontType.footer.getFont(), range: fullRange)
+        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: AFont.init().style(fontStyle: .Normal, size: .s14), range: fullRange)
         
         for item in attributes {
             let arange = attributedOriginalText.mutableString.range(of: item.text)
@@ -87,15 +85,8 @@ class ATextView: UITextView, UITextViewDelegate {
     // MARK: - Delegate
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-    
-        if (URL.absoluteString == "111") {
-            self.aTextViewDelegate?.showTermsofUse()
-            } else if (URL.absoluteString == "222") {
-                self.aTextViewDelegate?.showPrivatePolicy()
-            } else if (URL.absoluteString == "333") {
-                self.aTextViewDelegate?.showLoging()
-            }
-            return false
+        self.aTextViewDelegate?.didSelected(item: URL.absoluteString)
+        return false
     }
 
 }
