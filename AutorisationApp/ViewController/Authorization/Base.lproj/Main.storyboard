@@ -65,6 +65,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singUpActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vv-Aj-hUh"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-xP-HkL" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="346" width="382" height="49.5"/>
@@ -86,6 +89,9 @@
                                         <inset key="imageEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="8"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="apple" title="Apple" imagePadding="12"/>
+                                        <connections>
+                                            <action selector="singUpAppleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMF-Yq-srh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICC-vL-uQ2" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="471.5" width="382" height="56"/>
@@ -94,6 +100,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="google" title="Button" imagePadding="9"/>
+                                        <connections>
+                                            <action selector="singUpGoogleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ons-cr-5di"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-e7-q5T" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="537.5" width="382" height="66.5"/>

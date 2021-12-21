@@ -59,7 +59,7 @@ class ViewController: BaseViewController  {
         signInSocialMediaLabel.font = AFont().style(fontStyle: .Normal, size: .s12)
     }
     
-    func setupTextView() {
+    private func setupTextView() {
         privatePolicyTextView.aTextViewDelegate = self
         loginTextView.aTextViewDelegate = self
         
@@ -86,8 +86,19 @@ class ViewController: BaseViewController  {
     }
     
     // MARK: - Actions
-  
 
+    @IBAction func singUpActions(_ sender: Any) {
+        let vc = HomeViewController.init().getVCFromWithStoryboard()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func singUpAppleActions(_ sender: Any) {
+        self.showComingSoonAlert()
+    }
+    
+    @IBAction func singUpGoogleActions(_ sender: Any) {
+    }
 }
 
 // MARK: - TextFieldViewDelegate

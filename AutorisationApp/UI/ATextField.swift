@@ -34,25 +34,25 @@ class ATextField: UITextField {
     
     
     var textPadding = UIEdgeInsets(
-            top: 10,
-            left: 20,
-            bottom: 10,
-            right: 20
-        )
-
-        override func textRect(forBounds bounds: CGRect) -> CGRect {
-            let rect = super.textRect(forBounds: bounds)
-            return rect.inset(by: textPadding)
-        }
-
-        override func editingRect(forBounds bounds: CGRect) -> CGRect {
-            let rect = super.editingRect(forBounds: bounds)
-            return rect.inset(by: textPadding)
-        }
+        top: 10,
+        left: 20,
+        bottom: 10,
+        right: 20
+    )
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.textRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.editingRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
     
     
     func style(as type: ATextFieldType,
-                      for delegate: UITextFieldDelegate?,
+               for delegate: UITextFieldDelegate?,
                placeholder: String? = nil,
                backgroundColor: UIColor = .clear,
                borderColor: UIColor = .clear,
@@ -65,27 +65,22 @@ class ATextField: UITextField {
         
         switch type {
         case .password:
-                addHideButton()
+            addHideButton()
             self.isSecureTextEntry = true
             self.clearButtonMode = .never
             self.returnKeyType = .go
             self.keyboardType = .URL
             self.autocorrectionType = .no
             self.textContentType = .oneTimeCode
-            setSpace()
             
         case .email:
             self.returnKeyType = .go
             self.keyboardType = .emailAddress
             self.textContentType = .oneTimeCode
             self.autocorrectionType = .no
-            setSpace()
         }
     }
     
-    private func setSpace() {
-       // self.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
-    }
     // MARK: - Helper methods
     
     func isShowErorr(_ isVisible: Bool) {
