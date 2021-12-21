@@ -8,7 +8,7 @@
 import Foundation
 
 struct PasswordValidator: Validator {
-    
+
     private enum PasswordError: LocalizedError {
         case incorrectPassword
         case passwordDoesntMatch
@@ -25,20 +25,20 @@ struct PasswordValidator: Validator {
             }
         }
     }
-    
+
     func validate(_ input: String?) throws {
-        
+
         guard let text = input else {
             throw PasswordError.empty
         }
-        
+
         if text.isEmpty {
             throw PasswordError.empty
         } else if !text.isValidPassword() {
             throw PasswordError.incorrectPassword
         }
     }
-    
+
     func validatePassword(password: String, comfirmPassword: String) throws {
         if !password.elementsEqual(comfirmPassword) {
             throw PasswordError.passwordDoesntMatch

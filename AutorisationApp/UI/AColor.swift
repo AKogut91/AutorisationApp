@@ -8,23 +8,19 @@
 import Foundation
 import UIKit
 
-fileprivate let lightBackground = UIColor.black
-fileprivate let darkBackground = UIColor.init(hex: "161824")
+private let lightBackground = UIColor.black
+private let darkBackground = UIColor.init(hex: "161824")
 
-fileprivate let lightTextViewBackground = UIColor.black
-fileprivate let darkTextViewBackground = UIColor.init(hex: "2B2F46")
+private let lightTextViewBackground = UIColor.black
+private let darkTextViewBackground = UIColor.init(hex: "2B2F46")
 
-fileprivate let lightError = UIColor.black
-fileprivate let darkError = UIColor.init(hex: "FF5271")
+private let lightError = UIColor.black
+private let darkError = UIColor.init(hex: "FF5271")
 
-fileprivate let lightTopLabel = UIColor.init(hex: "161824")
-fileprivate let darkTopLabel = UIColor.white
+private let lightTopLabel = UIColor.init(hex: "161824")
+private let darkTopLabel = UIColor.white
 
-fileprivate let purple = UIColor.init(hex: "6151CB")
-
-
-
-
+private let purple = UIColor.init(hex: "6151CB")
 
 enum AColor {
     // MARK: - Fields
@@ -40,7 +36,7 @@ enum AColor {
             })
         } else { return lightBackground }
     }
-    
+
     static var backgroundTextField: UIColor {
         if #available(iOS 13.0, *) {
             return UIColor(dynamicProvider: { traitCollection -> UIColor in
@@ -52,7 +48,7 @@ enum AColor {
             })
         } else { return lightTextViewBackground }
     }
-    
+
     static var backgroundErrorText: UIColor {
         if #available(iOS 13.0, *) {
             return UIColor(dynamicProvider: { traitCollection -> UIColor in
@@ -64,7 +60,7 @@ enum AColor {
             })
         } else { return lightError }
     }
-    
+
     static var topTextColor: UIColor {
         if #available(iOS 13.0, *) {
             return UIColor(dynamicProvider: { traitCollection -> UIColor in

@@ -8,8 +8,8 @@
 import Foundation
 
 class Logger {
-    
-    func Log(_ debug: String = "" , fileName: String = #file, function: String =  #function, line: Int = #line) {
+
+    func log(_ debug: String = "", fileName: String = #file, function: String =  #function, line: Int = #line) {
         let time = Date()
         let file = URL(fileURLWithPath: fileName).lastPathComponent
         print("┌──────────────┬────────────────────────────────────────────────")
@@ -17,4 +17,3 @@ class Logger {
         print("└──────────────┴────────────────────────────────────────────────")
     }
 }
-

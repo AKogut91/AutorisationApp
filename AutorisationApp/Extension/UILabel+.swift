@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UILabel {
-    
+
     func setMargins(margin: CGFloat = 10) {
         if let textString = self.text {
             var paragraphStyle = NSMutableParagraphStyle()

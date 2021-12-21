@@ -8,7 +8,7 @@
 import Foundation
 
 struct EmailValidator: Validator {
-    
+
     private enum EmailError: LocalizedError {
         case incorrectFormat
         case empty
@@ -22,13 +22,13 @@ struct EmailValidator: Validator {
             }
         }
     }
-    
+
     func validate(_ input: String?) throws {
-        
+
         guard let text = input else {
             throw EmailError.empty
         }
-        
+
         if text.isEmpty {
             throw EmailError.empty
         } else if !text.isEmail {
@@ -36,4 +36,3 @@ struct EmailValidator: Validator {
         }
     }
 }
-

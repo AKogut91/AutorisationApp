@@ -31,6 +31,7 @@
 		0530DCA0276B499200EF4548 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* Validator.swift */; };
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
+		05B9C0672772882D00BC9D88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 05B9C0662772882D00BC9D88 /* .swiftlint.yml */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
 		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
 		05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED518E2770C1A500292C9B /* HomeViewController.storyboard */; };
@@ -65,6 +66,7 @@
 		0530DC9F276B499200EF4548 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		05B9C0662772882D00BC9D88 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
 		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		05ED518E2770C1A500292C9B /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0530DC442768EE5100EF4548 /* Assets.xcassets */,
 				0530DC462768EE5100EF4548 /* LaunchScreen.storyboard */,
 				0530DC492768EE5100EF4548 /* Info.plist */,
+				05B9C0662772882D00BC9D88 /* .swiftlint.yml */,
 			);
 			path = AutorisationApp;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				0530DC342768EE4F00EF4548 /* Sources */,
 				0530DC352768EE4F00EF4548 /* Frameworks */,
 				0530DC362768EE4F00EF4548 /* Resources */,
+				05B9C0652772821D00BC9D88 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -296,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B9C0672772882D00BC9D88 /* .swiftlint.yml in Resources */,
 				0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */,
 				05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */,
 				0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */,
@@ -307,6 +312,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05B9C0652772821D00BC9D88 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		91CE233F6F60C5E0567BE265 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

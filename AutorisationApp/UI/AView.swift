@@ -9,32 +9,32 @@ import Foundation
 import UIKit
 
 class AView: UIView {
-    
+
     private enum CornerRadius: CGFloat {
         case none = 0.0
         case regular = 8.0
         case large = 20.0
     }
-    
+
    private enum FillBehavior {
         case filled
         case translucent
         case outlined
         case outlinedWarining
     }
-    
+
     enum ViewStyle {
         case contentBody
-        
+
     }
-    
+
     func style(_ style: ViewStyle) {
         switch style {
         case.contentBody:
             configure(as: .filled, with: AColor.backgroundTextField, cornerRadius: .regular)
         }
     }
-    
+
     private func configure(as style: FillBehavior,
                            with color: UIColor = .clear,
                            cornerRadius: CornerRadius = .none,
@@ -56,11 +56,11 @@ class AView: UIView {
         case .outlinedWarining:
             setupStyle(backgroundColor: color, borderColor: AColor.backgroundErrorText, borderWidth: 1.0)
         }
-        
+
         layer.cornerRadius = cornerRadius.rawValue
         clipsToBounds = true
     }
-    
+
     private func setupStyle(backgroundColor: UIColor, borderColor: UIColor, borderWidth: Double) {
         self.backgroundColor = backgroundColor
         self.layer.borderColor = borderColor.cgColor
