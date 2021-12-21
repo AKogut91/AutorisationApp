@@ -28,11 +28,11 @@ extension UIViewController {
         }
     }
 
-    private var instance: UIStoryboard {
+     var instance: UIStoryboard {
            return UIStoryboard(name: className, bundle: Bundle.main)
        }
 
-    func getVCFromWithStoryboard<T: UIViewController>() -> T where T: UIViewController {
-        return instance.instantiateViewController(withIdentifier: className) as! T
-    }
+    // func getVCFromWithStoryboard<T: UIViewController>() -> T where T: UIViewController {
+    //    return instance.instantiateViewController(withIdentifier: className) as! T
+    // }
 }

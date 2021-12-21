@@ -88,9 +88,11 @@ class ViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func singUpActions(_ sender: Any) {
-        let vc = HomeViewController.init().getVCFromWithStoryboard()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        let homeVC = HomeViewController()
+        let homeStoryborad = HomeViewController().instance.instantiateViewController(withIdentifier: homeVC.className) as? HomeViewController
+        guard let presentHome = homeStoryborad else { return }
+        presentHome.modalPresentationStyle = .fullScreen
+        self.present(presentHome, animated: true, completion: nil)
     }
 
     @IBAction func singUpAppleActions(_ sender: Any) {
