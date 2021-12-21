@@ -93,27 +93,21 @@ class TextFieldView: UIView, UITextFieldDelegate {
     }
     
     
-    // MARK: - Animation Border in TextField
-    private func isShowErrorBorder(_ isVisible: Bool) {
-        
-        if isVisible {
-            UIView.animate(withDuration: 0.3) {
-                self.textfield.isShowErorr(true)
-            }
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.textfield.isShowErorr(false)
-            }
-        }
-    }
-    
     // MARK: - Delegate
+
+   func textFieldDidBeginEditing(_ textField: UITextField) {
+       UIView.animate(withDuration: 0.33) { [unowned self] in
+           errorLabel.isHidden = true
+           errorLabel.alpha = 0
+           textfield.isShowErorr(false)
+       }
+   }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        
+    
         guard let currentValidator = validator else {return}
         do {
-
+            
             guard let textFieldText = textfield.text else { return }
             
             try currentValidator.validate(textFieldText)
@@ -124,13 +118,12 @@ class TextFieldView: UIView, UITextFieldDelegate {
                 if let passwordValidator = currentValidator as? PasswordValidator {
                     try passwordValidator.validatePassword(password: pass, comfirmPassword: textfield.text ?? "")
                 }
-                
-            } 
-            
+            }
+        
             UIView.animate(withDuration: 0.33) { [unowned self] in
                 errorLabel.isHidden = true
                 errorLabel.alpha = 0
-                isShowErrorBorder(false)
+                textfield.isShowErorr(false)
             }
             
         } catch let error as LocalizedError {
@@ -139,7 +132,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
             UIView.animate(withDuration: 0.33) { [unowned self] in
                 errorLabel.isHidden = false
                 errorLabel.alpha = 1
-                isShowErrorBorder(true)
+                textfield.isShowErorr(true)
             }
             
         } catch {
@@ -151,7 +144,6 @@ class TextFieldView: UIView, UITextFieldDelegate {
         return self.delegate?.shouldReturn(self) ?? true
     }
     
-    
     @discardableResult override func becomeFirstResponder() -> Bool {
         return textfield.becomeFirstResponder()
     }
@@ -159,7 +151,6 @@ class TextFieldView: UIView, UITextFieldDelegate {
     @discardableResult override func resignFirstResponder() -> Bool {
         return textfield.resignFirstResponder()
     }
-    
     
 }
 
