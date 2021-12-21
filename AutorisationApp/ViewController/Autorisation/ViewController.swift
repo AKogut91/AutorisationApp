@@ -9,14 +9,14 @@ import UIKit
 
 class ViewController: BaseViewController  {
    
-    @IBOutlet weak private var topLabel: ALabel!
-    @IBOutlet weak private var topLabelFooter: ALabel!
+    @IBOutlet weak private var topLabel: UILabel!
+    @IBOutlet weak private var topLabelFooter: UILabel!
     @IBOutlet weak private var emailTextField: TextFieldView!
     @IBOutlet weak private var passwordTextField: TextFieldView!
     @IBOutlet weak private var comfirmPasswordTextField: TextFieldView!
     @IBOutlet weak private var privatePolicyTextView: ATextView!
     @IBOutlet weak private var singUp: AButton!
-    @IBOutlet weak private var signInSocialMediaLabel: ALabel!
+    @IBOutlet weak private var signInSocialMediaLabel: UILabel!
     @IBOutlet weak private var singInApple: AButton!
     @IBOutlet weak private var singInGoogle: AButton!
     @IBOutlet weak private var loginTextView: ATextView!
@@ -46,13 +46,20 @@ class ViewController: BaseViewController  {
     }
     
     private func setupLabel() {
-        topLabel.style(type: .top, text: "Create account")
-        topLabelFooter.style(type: .header, text: "Let’s create an account to save your results and secure your journal.")
-        signInSocialMediaLabel.style(type: .fotter, text: "or sign up with social media account:")
+        topLabel.textColor = AColor.topTextColor
+        topLabel.text = "Create account"
+        topLabel.font = AFont().style(fontStyle: .Normal, size: .s28)
+        
+        topLabelFooter.textColor = AColor.topTextColor
+        topLabelFooter.text = "Let’s create an account to save your results and secure your journal."
+        topLabelFooter.font = AFont().style(fontStyle: .Normal, size: .s14)
+        
+        signInSocialMediaLabel.textColor = AColor.topTextColor
+        signInSocialMediaLabel.text = "or sign up with social media account:"
+        signInSocialMediaLabel.font = AFont().style(fontStyle: .Normal, size: .s12)
     }
     
     func setupTextView() {
-        
         privatePolicyTextView.aTextViewDelegate = self
         loginTextView.aTextViewDelegate = self
         
