@@ -24,7 +24,7 @@ class AView: UIView {
     }
     
     enum ViewStyle {
-        case contentBody, erroContentBody
+        case contentBody
         
     }
     
@@ -32,41 +32,38 @@ class AView: UIView {
         switch style {
         case.contentBody:
             configure(as: .filled, with: AColor.backgroundTextField, cornerRadius: .regular)
-        case.erroContentBody:
-            configure(as: .outlinedWarining, with: AColor.backgroundTextField, cornerRadius: .regular)
+        }
+    }
+    
+    private func configure(as style: FillBehavior,
+                           with color: UIColor = .clear,
+                           cornerRadius: CornerRadius = .none,
+                           isBlurred: Bool = false,
+                           isLightBlurred: Bool = false) {
+        switch style {
+        case .filled:
+            backgroundColor = color
+            layer.borderColor = UIColor.clear.cgColor
+            layer.borderWidth = 1.0
+        case .translucent:
+            backgroundColor = .clear
+            layer.borderColor = UIColor.clear.cgColor
+            layer.borderWidth = 1.0
+        case .outlined:
+            backgroundColor = .clear
+            layer.borderColor = color.cgColor
+            layer.borderWidth = 1.0
+        case .outlinedWarining:
+            setupStyle(backgroundColor: color, borderColor: AColor.backgroundErrorText, borderWidth: 1.0)
         }
         
-        func configure(as style: FillBehavior,
-                               with color: UIColor = .clear,
-                               cornerRadius: CornerRadius = .none,
-                               isBlurred: Bool = false,
-                               isLightBlurred: Bool = false) {
-            switch style {
-            case .filled:
-                backgroundColor = color
-                layer.borderColor = UIColor.clear.cgColor
-                layer.borderWidth = 1.0
-            case .translucent:
-                backgroundColor = .clear
-                layer.borderColor = UIColor.clear.cgColor
-                layer.borderWidth = 1.0
-            case .outlined:
-                backgroundColor = .clear
-                layer.borderColor = color.cgColor
-                layer.borderWidth = 1.0
-            case .outlinedWarining:
-                setupStyle(backgroundColor: color, borderColor: AColor.backgroundErrorText, borderWidth: 1.0)
-            }
-            
-            layer.cornerRadius = cornerRadius.rawValue
-            clipsToBounds = true
-        }
-         
-        func setupStyle(backgroundColor: UIColor, borderColor: UIColor, borderWidth: Double) {
-            self.backgroundColor = backgroundColor
-            self.layer.borderColor = borderColor.cgColor
-            self.layer.borderWidth = borderWidth
-        }
-        
+        layer.cornerRadius = cornerRadius.rawValue
+        clipsToBounds = true
+    }
+    
+    private func setupStyle(backgroundColor: UIColor, borderColor: UIColor, borderWidth: Double) {
+        self.backgroundColor = backgroundColor
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = borderWidth
     }
 }
