@@ -8,40 +8,35 @@
 import Foundation
 import UIKit
 
-enum FontType {
-    case top
-    case header
-    case footer
-    case mormal
+struct AFont {
     
-    private enum FontSize: CGFloat {
-        case none = 0.0
-        case normal = 12
-        case regular = 14
-        case large = 28
-        
+    enum FontStyle: String {
+        case Bold
+        case Regular
+        case Normal
+            
+        }
+    
+    enum FontSize: CGFloat {
+        case s0 = 0.0
+        case s12 = 12
+        case s14 = 14
+        case s28 = 28
     }
     
-    func getFont() -> UIFont {
-        let name = "Helvetica Neue"
-        switch self {
-        case .top:
-            let size = FontSize.large.rawValue
-            let font = UIFont(name: name , size: size) ?? UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-            return font
-        case .header:
-            let size = FontSize.regular.rawValue
-            let font = UIFont(name: name , size: size) ?? UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-            return font
-        case .footer:
-            let size = FontSize.regular.rawValue
-            let font = UIFont(name: name , size: size) ?? UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-            return font
-        case .mormal:
-            let size = FontSize.normal.rawValue
-            let font = UIFont(name: name , size: size) ?? UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-            return font
+
+    func style(fontStyle: FontStyle, size: FontSize) -> UIFont {
+        let name = "Helvetica Neue-\(fontStyle.rawValue)"
+        var font: UIFont!
+        
+        switch fontStyle {
+        case .Bold:
+            font = UIFont(name: name, size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
+        case .Regular:
+            font = UIFont(name: name, size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
+        case .Normal:
+            font = UIFont(name: name, size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
         }
+        return font
     }
 }
-
