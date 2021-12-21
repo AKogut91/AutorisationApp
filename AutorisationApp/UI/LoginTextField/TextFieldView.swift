@@ -22,10 +22,9 @@ enum TextFieldType {
 class TextFieldView: UIView, UITextFieldDelegate {
     
     @IBOutlet weak private var textfield: ATextField!
-    @IBOutlet weak private var errorLabel: ALabel!
+    @IBOutlet weak private var errorLabel: UILabel!
     private var validator : AValidator?
     private var textFieldType: TextFieldType?
-
     private var linkedPasswordTextField: TextFieldView?
     
     weak var delegate: TextFieldViewDelegate?
@@ -66,7 +65,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             placeholder: placeholder,
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
-            errorLabel.style(type: .error)
+            setupLabel()
             validator?.style(.email)
             
         case .password:
@@ -74,7 +73,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             placeholder: placeholder,
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
-            errorLabel.style(type: .error)
+            setupLabel()
             validator?.style(.password)
             
         case .comfirmPassword(let textView):
@@ -83,26 +82,28 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             placeholder: placeholder,
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
-            errorLabel.style(type: .error)
+            setupLabel()
             validator?.style(.comfirmPassword)
         }
         
     }
     
-    func getTextFromTextFied() -> String? {
-        return textfield.text
+    private func setupLabel() {
+        errorLabel.textColor = AColor.backgroundErrorText
+        errorLabel.font = AFont.init().style(fontStyle: .Normal, size: .s12)
     }
     
+    
     // MARK: - Animation Border in TextField
-    private func showHideErrorTextFieldBorder(error: Bool) {
+    private func isShowErrorBorder(_ isVisible: Bool) {
         
-        if error {
+        if isVisible {
             UIView.animate(withDuration: 0.3) {
-                self.textfield.showHideBorder(showing: true)
+                self.textfield.isShowErorr(true)
             }
         } else {
             UIView.animate(withDuration: 0.3) {
-                self.textfield.showHideBorder(showing: false)
+                self.textfield.isShowErorr(false)
             }
         }
     }
@@ -131,7 +132,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
             UIView.animate(withDuration: 0.33) { [unowned self] in
                 errorLabel.isHidden = true
                 errorLabel.alpha = 0
-                showHideErrorTextFieldBorder(error: false)
+                isShowErrorBorder(false)
             }
             
         } catch let error as LocalizedError {
@@ -140,7 +141,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
             UIView.animate(withDuration: 0.33) { [unowned self] in
                 errorLabel.isHidden = false
                 errorLabel.alpha = 1
-                showHideErrorTextFieldBorder(error: true)
+                isShowErrorBorder(true)
             }
             
         } catch {
@@ -157,7 +158,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
         return textfield.becomeFirstResponder()
     }
     
-   @discardableResult override func resignFirstResponder() -> Bool {
+    @discardableResult override func resignFirstResponder() -> Bool {
         return textfield.resignFirstResponder()
     }
     

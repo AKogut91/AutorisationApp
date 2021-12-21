@@ -88,8 +88,8 @@ class ATextField: UITextField {
     }
     // MARK: - Helper methods
     
-    func showHideBorder(showing: Bool) {
-        if showing {
+    func isShowErorr(_ isVisible: Bool) {
+        if isVisible {
             self.addBorder(1.0, color: AColor.backgroundErrorText, cornerRadius: ATextFieldCornerRadius.regular.rawValue)
         } else {
             self.addBorder(1.0, color: UIColor.clear, cornerRadius: ATextFieldCornerRadius.regular.rawValue)
@@ -116,7 +116,7 @@ class ATextField: UITextField {
         
         
         hideButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -25, bottom: 0, right: 0)
-        hideButton?.frame = CGRect(x: CGFloat(self.frame.size.width - 40), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        hideButton?.frame = CGRect(x: CGFloat(self.frame.size.width - 40), y:5, width:25, height:25.0)
         
         rightView = hideButton
         rightViewMode = .always

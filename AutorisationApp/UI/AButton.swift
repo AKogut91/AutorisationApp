@@ -78,10 +78,6 @@ class AButton: UIButton {
         tintColor = .white
     }
     
-    func performIndicated(action: @escaping (@escaping () -> Void) -> Void) {
-        startIndicating { [weak self] in action { self?.stopIndicating() }}
-    }
-    
     func startIndicating() {
         isEnabled = false
         activityIndicator.startAnimating()
