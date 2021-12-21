@@ -23,7 +23,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
     
     @IBOutlet weak private var textfield: ATextField!
     @IBOutlet weak private var errorLabel: UILabel!
-    private var validator : AValidator?
+    private var validator : Validator?
     private var textFieldType: TextFieldType?
     private var linkedPasswordTextField: TextFieldView?
     
@@ -50,7 +50,6 @@ class TextFieldView: UIView, UITextFieldDelegate {
             // UI Color
             contentView.backgroundColor = .clear
             textfield.backgroundColor = .clear
-            validator = AValidator.init()
             errorLabel.isHidden = true
         } else {
             print("Error init -> \(String(describing: TextFieldView.self)) ")
@@ -66,7 +65,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
             setupLabel()
-            validator?.style(.email)
+            validator = EmailValidator()
             
         case .password:
             textfield.style(as: .password, for: self,
@@ -74,7 +73,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
             setupLabel()
-            validator?.style(.password)
+            validator = PasswordValidator()
             
         case .comfirmPassword(let textView):
             self.linkedPasswordTextField = textView
@@ -83,7 +82,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
                             backgroundColor: AColor.backgroundTextField,
                             borderColor: .clear, cornerRadius: .regular)
             setupLabel()
-            validator?.style(.comfirmPassword)
+            validator = PasswordValidator()
         }
         
     }
@@ -112,20 +111,19 @@ class TextFieldView: UIView, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         
-        guard let valid = validator else {return}
+        guard let currentValidator = validator else {return}
         do {
 
             guard let textFieldText = textfield.text else { return }
             
-            //if textFieldText.isEmpty {
-            //    return
-            //}
-            
-            try valid.validate(textFieldText)
+            try currentValidator.validate(textFieldText)
             
             if linkedPasswordTextField != nil {
                 guard let pass = linkedPasswordTextField?.textfield.text else { return }
-                try valid.validatePassword(password: pass, comfirmPassword: textfield.text ?? "")
+                
+                if let passwordValidator = currentValidator as? PasswordValidator {
+                    try passwordValidator.validatePassword(password: pass, comfirmPassword: textfield.text ?? "")
+                }
                 
             } 
             
