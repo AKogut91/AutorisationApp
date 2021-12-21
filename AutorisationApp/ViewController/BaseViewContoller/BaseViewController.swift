@@ -8,17 +8,20 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    var statusBarStyle = UIStatusBarStyle.default
-    var onKeyBoardToggle: ((CGFloat) -> Void)?
+    
+    var keyShowBoard: ((CGFloat) -> Void)?
+    var keyHideBoard: ((CGFloat) -> Void)?
     let logger = Logger()
+    
+    private var keyboardNotificationIsUsed = false
+
+
+    // MARK: - Life cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         printVCLife()
-        // MARK: Keyboard Observer
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        setKeyboardNotification()
     }
     
     override func viewDidLoad() {
@@ -36,18 +39,12 @@ class BaseViewController: UIViewController {
         super.viewWillDisappear(animated)
         view.endEditing(true)
         printVCLife(finish: true)
-        // MARK: Keyboard Observer
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        removeKeyboardNotification()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         printVCLife(finish: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
     }
     
     deinit {
@@ -65,6 +62,28 @@ class BaseViewController: UIViewController {
     private func setBackgraundColor() {
         self.view.backgroundColor = AColor.background
     }
+    
+    // MARK: - Notifications
+    
+    func isKeyboardNotification(_ isUsed: Bool) {
+        self.keyboardNotificationIsUsed = isUsed
+    }
+    
+    private func setKeyboardNotification() {
+        if keyboardNotificationIsUsed {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+        
+    }
+    
+    private func removeKeyboardNotification() {
+        if keyboardNotificationIsUsed {
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+    }
+    
 }
 
 
@@ -76,11 +95,11 @@ extension BaseViewController {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            onKeyBoardToggle?(keyboardHeight)
+            keyShowBoard?(keyboardHeight)
         }
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        onKeyBoardToggle?(0)
+        keyHideBoard?(0)
     }
 }
