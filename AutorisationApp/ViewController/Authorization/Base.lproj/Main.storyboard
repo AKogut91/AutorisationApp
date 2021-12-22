@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutorisationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wSu-2z-k3l">
+                                <rect key="frame" x="16" y="64" width="382" height="604"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-Np-cIB">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Wm-HCk">
+                                        <rect key="frame" x="0.0" y="39" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tig-ce-RJi" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="69.5" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="aO0-Rs-FJ3"/>
+                                        </constraints>
+                                    </view>
+                                    <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIW-7F-boY" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="129.5" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="VUK-2C-f53"/>
+                                        </constraints>
+                                    </view>
+                                    <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCf-qv-8jX" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="189.5" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="kQJ-Qd-Rct"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-4Q-k3B">
+                                        <rect key="frame" x="0.0" y="249.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-k9-Fm1" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="382" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="D3r-Jw-3OF"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singUpActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vv-Aj-hUh"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-xP-HkL" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="346" width="382" height="49.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="lh4-aQ-1DV"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnu-7o-JtA" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="405.5" width="382" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="U3b-dS-BG5"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="8"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="apple" title="Apple" imagePadding="12"/>
+                                        <connections>
+                                            <action selector="singUpAppleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMF-Yq-srh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICC-vL-uQ2" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="471.5" width="382" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="aZQ-Wt-7dd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="google" title="Button" imagePadding="9"/>
+                                        <connections>
+                                            <action selector="singUpGoogleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ons-cr-5di"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-e7-q5T" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="537.5" width="382" height="66.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="0wj-fi-vfG"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eni</string>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YJl-e7-q5T" secondAttribute="trailing" id="9eW-wL-ZTJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="YJl-e7-q5T" secondAttribute="bottom" id="Dg3-IV-1hp"/>
+                                    <constraint firstAttribute="trailing" secondItem="oWo-xP-HkL" secondAttribute="trailing" id="rTI-wL-xzL"/>
+                                    <constraint firstItem="YJl-e7-q5T" firstAttribute="leading" secondItem="wSu-2z-k3l" secondAttribute="leading" id="th9-w0-3zR"/>
+                                    <constraint firstItem="oWo-xP-HkL" firstAttribute="leading" secondItem="wSu-2z-k3l" secondAttribute="leading" id="ttG-zj-mfT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wSu-2z-k3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FEw-pD-hbk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wSu-2z-k3l" secondAttribute="trailing" constant="16" id="RzI-oY-pVb"/>
+                            <constraint firstItem="wSu-2z-k3l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gYx-QI-Voz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comfirmPasswordTextField" destination="pCf-qv-8jX" id="yBP-tb-YFb"/>
+                        <outlet property="emailTextField" destination="tig-ce-RJi" id="y9x-Bw-QgN"/>
+                        <outlet property="loginTextView" destination="YJl-e7-q5T" id="Px3-7u-nQR"/>
+                        <outlet property="passwordTextField" destination="TIW-7F-boY" id="Ho8-XX-Anq"/>
+                        <outlet property="privatePolicyTextView" destination="oWo-xP-HkL" id="MK1-VF-A2C"/>
+                        <outlet property="signInSocialMediaLabel" destination="T0l-4Q-k3B" id="Cdd-UE-ORb"/>
+                        <outlet property="singInApple" destination="Lnu-7o-JtA" id="7Ji-F8-jXQ"/>
+                        <outlet property="singInGoogle" destination="ICC-vL-uQ2" id="gl9-HE-ZV5"/>
+                        <outlet property="singUp" destination="3cq-k9-Fm1" id="5yN-2L-nsS"/>
+                        <outlet property="topLabel" destination="sFh-Np-cIB" id="UhW-yX-8zs"/>
+                        <outlet property="topLabelFooter" destination="jSO-Wm-HCk" id="yyU-tm-GcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apple" width="25" height="25"/>
+        <image name="google" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
