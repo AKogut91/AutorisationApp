@@ -103,15 +103,18 @@ class TextFieldView: UIView, UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
 
-        guard let currentValidator = validator else {return}
+        guard let currentValidator = validator else {
+            return}
         do {
 
-            guard let textFieldText = textfield.text else { return }
+            guard let textFieldText = textfield.text else {
+                return }
 
             try currentValidator.validate(textFieldText)
 
             if linkedPasswordTextField != nil {
-                guard let pass = linkedPasswordTextField?.textfield.text else { return }
+                guard let pass = linkedPasswordTextField?.textfield.text else {
+                    return }
 
                 if let passwordValidator = currentValidator as? PasswordValidator {
                     try passwordValidator.validatePassword(password: pass, comfirmPassword: textfield.text ?? "")

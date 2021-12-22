@@ -65,17 +65,17 @@ class ViewController: BaseViewController {
 
         privatePolicyTextView.style(type: .undeline,
                                     text: "By continuing, you agree with Privacy Policy & Terms of Use.")
-        privatePolicyTextView.addAttr((text: "Privacy Policy", type: .link, "111"))
-        privatePolicyTextView.addAttr((text: "Privacy Policy", type: .color, AColor.purpleColor))
+        privatePolicyTextView.addAttr( AttributesText(text: "Privacy Policy", type: .link, value: "111"))
+        privatePolicyTextView.addAttr(AttributesText(text: "Privacy Policy", type: .color, value: AColor.purpleColor))
 
-        privatePolicyTextView.addAttr((text: "Terms of Use.", type: .link, "222"))
-        privatePolicyTextView.addAttr((text: "Terms of Use.", type: .color, AColor.purpleColor))
+        privatePolicyTextView.addAttr(AttributesText(text: "Terms of Use.", type: .link, value: "222"))
+        privatePolicyTextView.addAttr(AttributesText(text: "Terms of Use.", type: .color, value: AColor.purpleColor))
         privatePolicyTextView.setup()
 
         loginTextView.style(type: .undeline,
                             text: "Already have an account? Log in")
-        loginTextView.addAttr((text: "Log in", type: .link, "333"))
-        loginTextView.addAttr((text: "Log in", type: .color, AColor.purpleColor))
+        loginTextView.addAttr(AttributesText(text: "Log in", type: .link, value: "333"))
+        loginTextView.addAttr(AttributesText(text: "Log in", type: .color, value: AColor.purpleColor))
         loginTextView.setup()
     }
 
@@ -89,8 +89,9 @@ class ViewController: BaseViewController {
 
     @IBAction func singUpActions(_ sender: Any) {
         let homeVC = HomeViewController()
-        let homeStoryborad = HomeViewController().instance.instantiateViewController(withIdentifier: homeVC.className) as? HomeViewController
-        guard let presentHome = homeStoryborad else { return }
+        let homeStoryborad = homeVC.instance.instantiateViewController(withIdentifier: homeVC.className) as? HomeViewController
+        guard let presentHome = homeStoryborad else {
+            return }
         presentHome.modalPresentationStyle = .fullScreen
         self.present(presentHome, animated: true, completion: nil)
     }
@@ -100,6 +101,7 @@ class ViewController: BaseViewController {
     }
 
     @IBAction func singUpGoogleActions(_ sender: Any) {
+        self.showComingSoonAlert()
     }
 }
 

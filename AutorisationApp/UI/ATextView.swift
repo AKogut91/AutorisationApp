@@ -12,23 +12,29 @@ protocol ATextViewDelegate: AnyObject {
     func didSelected(item: String)
 }
 
+enum AttrType {
+    case link
+    case color
+}
+
+struct AttributesText {
+    var text = ""
+    var type: AttrType?
+    var value: Any?
+}
+
 class ATextView: UITextView, UITextViewDelegate {
 
     enum ATextViewType {
         case undeline
     }
-
-    enum AttrType {
-        case link
-        case color
-    }
-
+    
     weak var aTextViewDelegate: ATextViewDelegate?
 
     private var originalText: String = ""
-    private var attributes: [(text: String, type: AttrType, value: Any)] = []
+    private var attributes: [AttributesText] = []
 
-    func style(type: ATextViewType, text: String, attrs: [(text: String, type: AttrType, value: Any)] = []) {
+    func style(type: ATextViewType, text: String, attrs: [AttributesText] = []) {
 
         self.delegate = self
         self.backgroundColor = .clear
@@ -42,7 +48,7 @@ class ATextView: UITextView, UITextViewDelegate {
         }
     }
 
-    func addAttr(_ attr: (text: String, type: AttrType, value: Any)) {
+    func addAttr(_ attr: (AttributesText)) {
         attributes.append(attr)
     }
 
@@ -53,21 +59,21 @@ class ATextView: UITextView, UITextViewDelegate {
 
         let fullRange = NSRange(location: 0, length: attributedOriginalText.length)
         attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: AColor.topTextColor, range: fullRange)
-        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: AFont.init().style(fontStyle: .normal, size: .s14), range: fullRange)
+        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: AFont.init().style(fontStyle: .normal, size: .s14) ?? UIFont(), range: fullRange)
 
         for item in attributes {
             let arange = attributedOriginalText.mutableString.range(of: item.text)
             switch item.type {
 
             case .link:
-                attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: item.value, range: arange)
+                attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: item.value ?? "", range: arange)
 
             case .color:
                 var color = UIColor.red
                 if let currentColor = item.value as? UIColor { color = currentColor }
                 attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: arange)
-            default:
-                break
+            case .none:
+                print("none")
             }
         }
 

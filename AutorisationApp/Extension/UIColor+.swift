@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    public convenience init(hex: String) {
+    convenience init(hex: String) {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
         if cString.hasPrefix("#") {

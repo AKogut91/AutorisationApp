@@ -31,7 +31,6 @@
 		0530DCA0276B499200EF4548 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* Validator.swift */; };
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
-		05B9C0672772882D00BC9D88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 05B9C0662772882D00BC9D88 /* .swiftlint.yml */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
 		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
 		05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED518E2770C1A500292C9B /* HomeViewController.storyboard */; };
@@ -66,7 +65,6 @@
 		0530DC9F276B499200EF4548 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
-		05B9C0662772882D00BC9D88 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
 		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		05ED518E2770C1A500292C9B /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				0530DC442768EE5100EF4548 /* Assets.xcassets */,
 				0530DC462768EE5100EF4548 /* LaunchScreen.storyboard */,
 				0530DC492768EE5100EF4548 /* Info.plist */,
-				05B9C0662772882D00BC9D88 /* .swiftlint.yml */,
 			);
 			path = AutorisationApp;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B9C0672772882D00BC9D88 /* .swiftlint.yml in Resources */,
 				0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */,
 				05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */,
 				0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */,

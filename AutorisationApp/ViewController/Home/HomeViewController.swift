@@ -9,8 +9,8 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-
+    @IBOutlet weak private var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

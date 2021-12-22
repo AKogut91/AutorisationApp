@@ -12,7 +12,7 @@ extension UILabel {
 
     func setMargins(margin: CGFloat = 10) {
         if let textString = self.text {
-            var paragraphStyle = NSMutableParagraphStyle()
+            let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.firstLineHeadIndent = margin
             paragraphStyle.headIndent = margin
             paragraphStyle.tailIndent = -margin

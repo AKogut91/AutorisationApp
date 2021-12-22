@@ -18,15 +18,14 @@ struct AFont {
         }
 
     enum FontSize: CGFloat {
-        case s0 = 0.0
         case s12 = 12
         case s14 = 14
         case s28 = 28
     }
 
-    func style(fontStyle: FontStyle, size: FontSize) -> UIFont {
+    func style(fontStyle: FontStyle, size: FontSize) -> UIFont? {
         let name = "Helvetica Neue-\(fontStyle.rawValue)"
-        var font: UIFont!
+        var font: UIFont?
 
         switch fontStyle {
         case .bold:
