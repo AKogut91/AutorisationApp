@@ -9,58 +9,75 @@ import UIKit
 
 class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     
-    @IBOutlet private weak var topLabel: UILabel!
-    @IBOutlet private weak var smallView: UIView!
+    @IBOutlet private weak var centerLabel: UILabel!
+    @IBOutlet private weak var gradientView: UIView!
+    @IBOutlet private weak var backgroundView: UIImageView!
     @IBOutlet private weak var logoImage: UIImageView!
-    @IBOutlet private weak var sky: UIImageView!
-    @IBOutlet private weak var sky1: UIImageView!
-    @IBOutlet private weak var rock5: UIImageView!
-    @IBOutlet private weak var rock4: UIImageView!
-    @IBOutlet private weak var rock3: UIImageView!
-    @IBOutlet private weak var rock2: UIImageView!
-    @IBOutlet private weak var rock1: UIImageView!
     
     private let color1: CGColor = AColor.preloadColor1.cgColor
     private let color2: CGColor = AColor.preloadColor2.cgColor
     private let color3: CGColor = AColor.preloadColor3.cgColor
+    private let color3Alfa07: CGColor = AColor.preloadColor3.withAlphaComponent(0.5).cgColor
     private let color4: CGColor = AColor.preloadColor4.cgColor
-    
     private let gradient: CAGradientLayer = CAGradientLayer()
     private var gradientColorSet: [[CGColor]] = []
-    private var viewArray = [UIImageView]()
-    private var duration = 4.0
+    private var duration = 3.0
     private var scale: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabel()
-        setView()
-        self.view.backgroundColor = .white
-        
-        if UITraitCollection.current.userInterfaceStyle == .light {
-            scale = 25.0
-        } else {
-            scale = 2.0
-        }
+        setupBackgroundView()
+        setupScaleForLogo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupGradient()
-        animateGradient()
+    
+        // Animation logo before before ger response
+        UIView.animate(withDuration: 1.0, animations: {() -> Void in
+            self.logoImage?.isHidden = false
+            self.logoImage?.alpha = 1
+            self.logoImage?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }, completion: {(_ finished: Bool) -> Void in
+            UIView.animate(withDuration: 1.0, animations: {() -> Void in
+                self.logoImage?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        })
+        
+        // Animation Gradient View
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.animateGradient()
+        }
+    }
+    
+    // MARK: - Gradient
+    
+    private func setupScaleForLogo() {
+        if UITraitCollection.current.userInterfaceStyle == .light {
+            scale = 25.0
+        } else {
+            scale = 3.0
+        }
     }
     
     private func setupGradient() {
         gradientColorSet = [
             [color1, color1, color1],
             [color1, color2, color2],
-            [color2, color3, color3],
-            [color2, color3, color4]
+            [color2, color3, color3]
         ]
         
+        if UITraitCollection.current.userInterfaceStyle == .dark {
+            self.gradientColorSet.append([color2, color3, color4])
+        } else {
+            self.gradientColorSet.append([color2, color3, color3Alfa07, color4])
+        }
+        
         gradient.colors = gradientColorSet[0]
-        gradient.frame = self.smallView.bounds
-        self.smallView.layer.addSublayer(gradient)
+        gradient.frame = self.gradientView.bounds
+        self.gradientView.layer.addSublayer(gradient)
     }
     
     private func animateGradient() {
@@ -88,85 +105,71 @@ class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     // MARK: - Label
     
     private func setupLabel() {
-        topLabel.isHidden = true
-        topLabel.alpha = 0
-        topLabel.textColor = AColor.topTextColor
-        topLabel.text = "We are here to build your better life together"
+        centerLabel.isHidden = true
+        centerLabel.alpha = 0
+        centerLabel.textColor = AColor.topTextColor
+        centerLabel.text = "We are here to build your better life together"
     }
     
-    private func animatedLabel() {
-        UIView.animate(withDuration: 1.0) { [weak self] in
-            self?.topLabel.isHidden = false
-            self?.topLabel.alpha = 1
+    private func animatedLabel(delay: Double) {
+        UIView.animate(withDuration: 0.33, delay: delay, options: .curveEaseIn) {  [weak self] in
+            self?.centerLabel.isHidden = false
+            self?.centerLabel.alpha = 1
         }
+    }
+    
+    private func setupBackgroundView() {
+        backgroundView.isHidden = true
+        backgroundView.alpha = 0
     }
     
     // MARK: - Views
     
-    private func setView() {
-        sky.isHidden = true
-        sky.alpha = 0
-        
-        viewArray = [rock2, rock1, rock3, rock4, rock5, sky1]
-        
-        for view in viewArray {
-            view.isHidden = true
-            view.alpha = 0
+    private func setYPositionForView(yPosition: CGFloat, value: CGFloat) -> CGFloat {
+        if UITraitCollection.current.userInterfaceStyle == .dark {
+            return (yPosition - value)
+        } else {
+            return (yPosition + 10)
         }
     }
     
-    private func animateRocks() {
-        var time = 0.0
-        
-        UIView.animate(withDuration: 0.33) { [weak self] in
-            self?.sky.isHidden = false
-            self?.sky.alpha = 1
-        }
-        
-        for view in viewArray.enumerated() {
-            time += 0.20
-            view.element.frame = CGRect(x: view.element.frame.origin.x,
-                                        y: view.element.frame.origin.y + 100,
-                                        width: view.element.frame.width,
-                                        height: view.element.frame.height)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + time) {
-                UIView.animate(withDuration: 0.23) {
-                    view.element.isHidden = false
-                    view.element.alpha = 1
-                    view.element.frame = CGRect(x: view.element.frame.origin.x,
-                                                y: view.element.frame.origin.y - 100,
-                                                width: view.element.frame.width,
-                                                height: view.element.frame.height)
-                }
-            }
+    private func animatebackgroundView() {
+        UIView.animate(withDuration: 0.33) { [unowned self] in
+            backgroundView.isHidden = false
+            backgroundView.alpha = 1
         }
     }
     
     // MARK: - Delegate
     
-    func animationDidStart(_ anim: CAAnimation) {
-        self.logger.log()
-        
+    func animatedLogo() {
         UIView.animate(withDuration: duration) { [weak self] in
-            self?.logoImage.transform = CGAffineTransform(scaleX: self?.scale ?? 0.0, y: self?.scale ?? 0.0)
+            self?.logoImage.transform = CGAffineTransform(scaleX: self?.scale ?? 0.0,
+                                                          y: self?.scale ?? 0.0)
             
             if UITraitCollection.current.userInterfaceStyle == .light {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     UIView.animate(withDuration: 0.33) {
                         self?.logoImage.alpha = 0
+                        self?.animatebackgroundView()
+                        self?.animatedLabel(delay: 0)
                     }
                 }
             } else {
                 self?.logoImage.alpha = 0
+                self?.animatebackgroundView()
+                self?.animatedLabel(delay: 1)
             }
         }
     }
     
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    func animationDidStart(_ anim: CAAnimation) {
         self.logger.log()
-        animateRocks()
-        animatedLabel()
+        animatedLogo()
     }
     
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        self.logger.log()
+
+    }
 }
