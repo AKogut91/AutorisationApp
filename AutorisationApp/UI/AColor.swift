@@ -22,6 +22,16 @@ private let darkTopLabel = UIColor.white
 
 private let purple = UIColor.init(hex: "6151CB")
 
+private let preloadDarkColor1 = UIColor.init(hex: "6151CB")
+private let preloadDarkColor2 = UIColor.init(hex: "6151CB")
+private let preloadDarkColor3 = UIColor.init(hex: "6151CB")
+private let preloadDarkColor4 = UIColor.init(hex: "6151CB")
+
+private let preloadLightColor1 = UIColor.init(hex: "6151CB")
+private let preloadLightColor2 = UIColor.init(hex: "6151CB")
+private let preloadLightColor3 = UIColor.init(hex: "6151CB")
+private let preloadLightColor4 = UIColor.init(hex: "6151CB")
+
 enum AColor {
     // MARK: - Fields
 
