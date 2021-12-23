@@ -29,6 +29,8 @@
 		0530DC762769F56600EF4548 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC752769F56600EF4548 /* String+.swift */; };
 		0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9C276AA74100EF4548 /* UILabel+.swift */; };
 		0530DCA0276B499200EF4548 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* Validator.swift */; };
+		05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */; };
+		05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */; };
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
@@ -63,6 +65,8 @@
 		0530DC752769F56600EF4548 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0530DC9C276AA74100EF4548 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		0530DC9F276B499200EF4548 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLoaderViewController.storyboard; sourceTree = "<group>"; };
+		05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderViewController.swift; sourceTree = "<group>"; };
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		0530DC522768EE7600EF4548 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				05AE7ECE27746E2C000909A5 /* PreLoader */,
 				05ED518D2770BFC700292C9B /* Home */,
 				0530DC592768F3DF00EF4548 /* BaseViewContoller */,
 				0530DC532768EE8000EF4548 /* Authorization */,
@@ -200,6 +205,15 @@
 				0530DC672769033000EF4548 /* TextFieldView.swift */,
 			);
 			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		05AE7ECE27746E2C000909A5 /* PreLoader */ = {
+			isa = PBXGroup;
+			children = (
+				05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */,
+				05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */,
+			);
+			path = PreLoader;
 			sourceTree = "<group>";
 		};
 		05B9C05E2771EC3900BC9D88 /* Validators */ = {
@@ -299,6 +313,7 @@
 			files = (
 				0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */,
 				05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */,
+				05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */,
 				0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */,
 				0530DC662769031E00EF4548 /* TextFieldView.xib in Resources */,
 				0530DC432768EE4F00EF4548 /* Main.storyboard in Resources */,
@@ -360,6 +375,7 @@
 				0530DCA0276B499200EF4548 /* Validator.swift in Sources */,
 				050F85D427707ED00085ADB1 /* ATextView.swift in Sources */,
 				0530DC5D2768F5EF00EF4548 /* UIViewController+.swift in Sources */,
+				05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */,
 				0530DC582768F3C000EF4548 /* Logger.swift in Sources */,
 				0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */,
 				05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */,

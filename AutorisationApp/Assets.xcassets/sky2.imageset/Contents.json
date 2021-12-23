@@ -1,17 +1,28 @@
 {
   "images" : [
     {
-      "filename" : "sky2.pdf",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "filename" : "Vector-1.pdf",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "Vector.pdf",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "sky2-1.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
