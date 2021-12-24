@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TEXT" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgW-vV-M95">
-                        <rect key="frame" x="0.0" y="40" width="317" height="40"/>
+                        <rect key="frame" x="0.0" y="32" width="317" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="kJr-Uc-8RJ"/>
@@ -43,7 +43,7 @@
                 <constraint firstItem="rad-kc-ejS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HXW-De-PTQ"/>
                 <constraint firstItem="bgW-vV-M95" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="MIC-uL-nNy"/>
                 <constraint firstItem="bgW-vV-M95" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tk8-hm-KuU"/>
-                <constraint firstItem="rad-kc-ejS" firstAttribute="top" secondItem="bgW-vV-M95" secondAttribute="bottom" constant="10" id="ehM-pw-gwQ"/>
+                <constraint firstItem="rad-kc-ejS" firstAttribute="top" secondItem="bgW-vV-M95" secondAttribute="bottom" constant="18" id="ehM-pw-gwQ"/>
                 <constraint firstAttribute="trailing" secondItem="bgW-vV-M95" secondAttribute="trailing" id="hMZ-mm-ihy"/>
                 <constraint firstAttribute="bottom" secondItem="rad-kc-ejS" secondAttribute="bottom" constant="15" id="pmk-Xu-x4a"/>
                 <constraint firstItem="bgW-vV-M95" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="s8t-F3-D3N"/>
