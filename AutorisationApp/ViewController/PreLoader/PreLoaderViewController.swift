@@ -170,6 +170,16 @@ class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.logger.log()
-
+        
+        // MARK: - Make to Coordinator
+        
+        let presentedVC = WelcomeViewController()
+        let presentedStoryborad = presentedVC.instance.instantiateViewController(withIdentifier: presentedVC.className) as? WelcomeViewController
+        guard let presentVC = presentedStoryborad else {
+            return
+        }
+        presentVC.modalPresentationStyle = .fullScreen
+        self.present(presentVC, animated: true, completion: nil)
     }
+    
 }

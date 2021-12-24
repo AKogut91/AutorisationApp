@@ -31,6 +31,12 @@
 		0530DCA0276B499200EF4548 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* Validator.swift */; };
 		05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */; };
 		05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */; };
+		05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */; };
+		05AE7ED72775C8CF000909A5 /* WelcomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ED62775C8CF000909A5 /* WelcomeViewController.storyboard */; };
+		05AE7EDB2775DC27000909A5 /* WelcomeTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED92775DC26000909A5 /* WelcomeTextCollectionViewCell.swift */; };
+		05AE7EDC2775DC27000909A5 /* WelcomeTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7EDA2775DC26000909A5 /* WelcomeTextCollectionViewCell.xib */; };
+		05AE7EDE2775E34F000909A5 /* UICollectionVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7EDD2775E34F000909A5 /* UICollectionVIew+.swift */; };
+		05AE7EE12775E49F000909A5 /* IUCollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7EE02775E49F000909A5 /* IUCollectionViewCell+.swift */; };
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
@@ -67,6 +73,12 @@
 		0530DC9F276B499200EF4548 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLoaderViewController.storyboard; sourceTree = "<group>"; };
 		05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderViewController.swift; sourceTree = "<group>"; };
+		05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		05AE7ED62775C8CF000909A5 /* WelcomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeViewController.storyboard; sourceTree = "<group>"; };
+		05AE7ED92775DC26000909A5 /* WelcomeTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		05AE7EDA2775DC26000909A5 /* WelcomeTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeTextCollectionViewCell.xib; sourceTree = "<group>"; };
+		05AE7EDD2775E34F000909A5 /* UICollectionVIew+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionVIew+.swift"; sourceTree = "<group>"; };
+		05AE7EE02775E49F000909A5 /* IUCollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IUCollectionViewCell+.swift"; sourceTree = "<group>"; };
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
@@ -147,6 +159,8 @@
 				0530DC6D2769108000EF4548 /* UIColor+.swift */,
 				0530DC752769F56600EF4548 /* String+.swift */,
 				0530DC9C276AA74100EF4548 /* UILabel+.swift */,
+				05AE7EDD2775E34F000909A5 /* UICollectionVIew+.swift */,
+				05AE7EE02775E49F000909A5 /* IUCollectionViewCell+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 		0530DC522768EE7600EF4548 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				05AE7ED32775C8AE000909A5 /* Welcome */,
 				05AE7ECE27746E2C000909A5 /* PreLoader */,
 				05ED518D2770BFC700292C9B /* Home */,
 				0530DC592768F3DF00EF4548 /* BaseViewContoller */,
@@ -214,6 +229,25 @@
 				05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */,
 			);
 			path = PreLoader;
+			sourceTree = "<group>";
+		};
+		05AE7ED32775C8AE000909A5 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				05AE7ED82775DC03000909A5 /* WelcomeTextCollectionCell */,
+				05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */,
+				05AE7ED62775C8CF000909A5 /* WelcomeViewController.storyboard */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		05AE7ED82775DC03000909A5 /* WelcomeTextCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				05AE7ED92775DC26000909A5 /* WelcomeTextCollectionViewCell.swift */,
+				05AE7EDA2775DC26000909A5 /* WelcomeTextCollectionViewCell.xib */,
+			);
+			path = WelcomeTextCollectionCell;
 			sourceTree = "<group>";
 		};
 		05B9C05E2771EC3900BC9D88 /* Validators */ = {
@@ -316,6 +350,8 @@
 				05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */,
 				0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */,
 				0530DC662769031E00EF4548 /* TextFieldView.xib in Resources */,
+				05AE7ED72775C8CF000909A5 /* WelcomeViewController.storyboard in Resources */,
+				05AE7EDC2775DC27000909A5 /* WelcomeTextCollectionViewCell.xib in Resources */,
 				0530DC432768EE4F00EF4548 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,12 +412,16 @@
 				050F85D427707ED00085ADB1 /* ATextView.swift in Sources */,
 				0530DC5D2768F5EF00EF4548 /* UIViewController+.swift in Sources */,
 				05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */,
+				05AE7EE12775E49F000909A5 /* IUCollectionViewCell+.swift in Sources */,
+				05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */,
 				0530DC582768F3C000EF4548 /* Logger.swift in Sources */,
 				0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */,
 				05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */,
+				05AE7EDB2775DC27000909A5 /* WelcomeTextCollectionViewCell.swift in Sources */,
 				05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */,
 				05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */,
 				0530DC3C2768EE4F00EF4548 /* AppDelegate.swift in Sources */,
+				05AE7EDE2775E34F000909A5 /* UICollectionVIew+.swift in Sources */,
 				0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */,
 				0530DC6E2769108000EF4548 /* UIColor+.swift in Sources */,
 				0530DC762769F56600EF4548 /* String+.swift in Sources */,
