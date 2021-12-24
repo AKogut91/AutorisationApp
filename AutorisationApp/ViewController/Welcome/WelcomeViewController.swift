@@ -37,13 +37,13 @@ class WelcomeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        var time = 0.0
-        for row in 0...data.count - 1 {
-            time += 3
-            DispatchQueue.main.asyncAfter(deadline: .now() + time) { [weak self] in
-                self?.collectionView.scrollToItem(at: IndexPath(row: row, section: 0), at: .centeredHorizontally, animated: true)
-            }
-        }
+      //  var time = 0.0
+      //  for row in 0...data.count - 1 {
+      //      time += 3
+      //      DispatchQueue.main.asyncAfter(deadline: .now() + time) { [weak self] in
+      //          self?.collectionView.scrollToItem(at: IndexPath(row: row, section: 0), at: .centeredHorizontally, animated: true)
+      //      }
+      //  }
     }
     
     // MARK: - Setup Data
@@ -53,7 +53,7 @@ class WelcomeViewController: BaseViewController {
                                           secondary: "You will always monitor your progress by tracking your mood and watched materials"))
         self.data.append(WelcodeData.init(top: "Keep your journal, secondary",
                                           secondary: "Note everything on your mind. This will help us make you feel better"))
-        self.data.append( WelcodeData.init(top: "Unlimited access to hundreds of workouts, secondary",
+        self.data.append( WelcodeData.init(top: "Unlimited access to hundreds of workouts",
                                            secondary: "All you need to do is to make at least 10 minutes per day and create it into your daily routine"))
         self.data.append(WelcodeData.init(top: "Motivation reward system",
                                           secondary: "Get bonuses for completing tasks and exchange it for special propositions "))
