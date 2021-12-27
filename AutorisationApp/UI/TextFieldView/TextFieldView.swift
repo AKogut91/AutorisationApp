@@ -88,7 +88,7 @@ class TextFieldView: UIView, UITextFieldDelegate {
 
     private func setupLabel() {
         errorLabel.textColor = AColor.backgroundErrorText
-        errorLabel.font = AFont.init().style(fontStyle: .normal, size: .s12)
+        errorLabel.font = AFonts.regular.size(.s12)
     }
 
     // MARK: - Delegate

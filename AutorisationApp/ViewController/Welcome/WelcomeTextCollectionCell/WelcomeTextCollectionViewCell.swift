@@ -19,10 +19,10 @@ class WelcomeTextCollectionViewCell: UICollectionViewCell {
 
     private func setupLabel() {
         headerLabel.textColor = AColor.topTextColor
-        headerLabel.font = AFont().style(fontStyle: .bold, size: .s32)
+        headerLabel.font = AFonts.semiBold.size(.s32)
         
         footerLabel.textColor = AColor.topTextColor
-        footerLabel.font = AFont().style(fontStyle: .normal, size: .s14)
+        footerLabel.font = AFonts.regular.size(.s14)
     }
     
     func setupHeaderCell(text: String) {

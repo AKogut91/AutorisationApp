@@ -44,14 +44,13 @@ class AButton: UIButton {
 
     enum ButtonCornerStyle: CGFloat {
         case plain = 0.0
-        case `default` = 25
+        case `default` = 30
 
     }
 
     // MARK: - Accessible methods
 
     func style(buttonStyle: ButtonStyle, buttonCornerStyle: ButtonCornerStyle, text: String?) {
-
         switch buttonStyle {
         case .standart:
             backgroundColor = AColor.purpleColor

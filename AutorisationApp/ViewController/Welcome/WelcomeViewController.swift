@@ -71,12 +71,13 @@ class WelcomeViewController: BaseViewController {
     
     private func setupButton() {
         testButton.style(buttonStyle: .standart, buttonCornerStyle: .default, text: "Take a test")
+        testButton.titleLabel?.font = AFonts.regular.size(.s14)
     }
     
     private func setupTextView() {
         haveAccountTextView.aTextViewDelegate = self
         haveAccountTextView.style(type: .undeline,
-                                  text: "Already have an account? Log in")
+                                  text: "Already have an account? Log in", textColor: AColor.purpleColor)
         haveAccountTextView.addAttr(AttributesText(text: "Log in", type: .link, value: "000"))
         haveAccountTextView.addAttr(AttributesText(text: "Log in", type: .color, value: AColor.purpleColor))
         haveAccountTextView.setup()

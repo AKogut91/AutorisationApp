@@ -8,33 +8,29 @@
 import Foundation
 import UIKit
 
-struct AFont {
+private let familyName = "Poppins"
 
-    enum FontStyle: String {
-        case bold = "Bold"
-        case regular = "Regular"
-        case normal = "Normal"
-    }
-
+enum AFonts: String {
+    case regular = "Regular"
+    case bold = "Bold"
+    case semiBold = "SemiBold"
+    
     enum FontSize: CGFloat {
         case s12 = 12
         case s14 = 14
         case s28 = 28
         case s32 = 32
+        case s35 = 35
     }
-
-    func style(fontStyle: FontStyle, size: FontSize) -> UIFont? {
-        let name = "Helvetica"
-        var font: UIFont?
-
-        switch fontStyle {
-        case .bold:
-            font = UIFont(name: name + "-\(fontStyle.rawValue)", size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
-        case .regular:
-            font = UIFont(name: name + "-\(fontStyle.rawValue)", size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
-        case .normal:
-            font = UIFont(name: name, size: size.rawValue) ?? UIFont(name: name, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
+    
+    func size(_ size: FontSize) -> UIFont {
+        if let font = UIFont(name: fullFontName, size: size.rawValue) {
+            return font
         }
-        return font
+        fatalError("Font '\(fullFontName)' does not exist.")
+    }
+    
+    fileprivate var fullFontName: String {
+        return rawValue.isEmpty ? familyName : familyName + "-" + rawValue
     }
 }

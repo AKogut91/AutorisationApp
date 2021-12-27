@@ -48,15 +48,15 @@ class ViewController: BaseViewController {
     private func setupLabel() {
         topLabel.textColor = AColor.topTextColor
         topLabel.text = "Create account"
-        topLabel.font = AFont().style(fontStyle: .normal, size: .s28)
+        topLabel.font = AFonts.regular.size(.s28)
 
         topLabelFooter.textColor = AColor.topTextColor
         topLabelFooter.text = "Let’s create an account to save your results and secure your journal."
-        topLabelFooter.font = AFont().style(fontStyle: .normal, size: .s14)
+        topLabelFooter.font = AFonts.regular.size(.s14)
 
         signInSocialMediaLabel.textColor = AColor.topTextColor
         signInSocialMediaLabel.text = "or sign up with social media account:"
-        signInSocialMediaLabel.font = AFont().style(fontStyle: .normal, size: .s12)
+        signInSocialMediaLabel.font = AFonts.regular.size(.s12)
     }
 
     private func setupTextView() {

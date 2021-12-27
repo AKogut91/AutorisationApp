@@ -29,6 +29,9 @@
 		0530DC762769F56600EF4548 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC752769F56600EF4548 /* String+.swift */; };
 		0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9C276AA74100EF4548 /* UILabel+.swift */; };
 		0530DCA0276B499200EF4548 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC9F276B499200EF4548 /* Validator.swift */; };
+		0543B5722779D2C10070C9DE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5712779D2C10070C9DE /* Poppins-Regular.ttf */; };
+		0543B5742779D4450070C9DE /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5732779D4450070C9DE /* Poppins-Bold.ttf */; };
+		0543B5762779E3DE0070C9DE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */; };
 		05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */; };
 		05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */; };
 		05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */; };
@@ -71,6 +74,9 @@
 		0530DC752769F56600EF4548 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0530DC9C276AA74100EF4548 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		0530DC9F276B499200EF4548 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		0543B5712779D2C10070C9DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		0543B5732779D4450070C9DE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLoaderViewController.storyboard; sourceTree = "<group>"; };
 		05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderViewController.swift; sourceTree = "<group>"; };
 		05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 		0530DC512768EE6500EF4548 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				0543B5702779D2AC0070C9DE /* Font */,
 				0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */,
 				0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */,
 			);
@@ -220,6 +227,16 @@
 				0530DC672769033000EF4548 /* TextFieldView.swift */,
 			);
 			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		0543B5702779D2AC0070C9DE /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0543B5732779D4450070C9DE /* Poppins-Bold.ttf */,
+				0543B5712779D2C10070C9DE /* Poppins-Regular.ttf */,
+				0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		05AE7ECE27746E2C000909A5 /* PreLoader */ = {
@@ -347,10 +364,13 @@
 			files = (
 				0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */,
 				05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */,
+				0543B5762779E3DE0070C9DE /* Poppins-SemiBold.ttf in Resources */,
 				05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */,
+				0543B5722779D2C10070C9DE /* Poppins-Regular.ttf in Resources */,
 				0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */,
 				0530DC662769031E00EF4548 /* TextFieldView.xib in Resources */,
 				05AE7ED72775C8CF000909A5 /* WelcomeViewController.storyboard in Resources */,
+				0543B5742779D4450070C9DE /* Poppins-Bold.ttf in Resources */,
 				05AE7EDC2775DC27000909A5 /* WelcomeTextCollectionViewCell.xib in Resources */,
 				0530DC432768EE4F00EF4548 /* Main.storyboard in Resources */,
 			);

@@ -33,13 +33,15 @@ class ATextView: UITextView, UITextViewDelegate {
 
     private var originalText: String = ""
     private var attributes: [AttributesText] = []
+    private var defaultTextColor = AColor.topTextColor
 
-    func style(type: ATextViewType, text: String, attrs: [AttributesText] = []) {
+    func style(type: ATextViewType, text: String, attrs: [AttributesText] = [], textColor: UIColor = AColor.topTextColor) {
 
         self.delegate = self
         self.backgroundColor = .clear
         self.textAlignment = .center
         self.textColor = AColor.topTextColor
+        self.defaultTextColor = textColor
 
         switch type {
         case .undeline:
@@ -58,8 +60,8 @@ class ATextView: UITextView, UITextViewDelegate {
         style.alignment = .center
 
         let fullRange = NSRange(location: 0, length: attributedOriginalText.length)
-        attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: AColor.topTextColor, range: fullRange)
-        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: AFont.init().style(fontStyle: .normal, size: .s14) ?? UIFont(), range: fullRange)
+        attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: defaultTextColor, range: fullRange)
+        attributedOriginalText.addAttribute( NSAttributedString.Key.font, value: AFonts.regular.size(.s14), range: fullRange)
 
         for item in attributes {
             let arange = attributedOriginalText.mutableString.range(of: item.text)
