@@ -10,8 +10,8 @@
 		050F85D427707ED00085ADB1 /* ATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F85D327707ED00085ADB1 /* ATextView.swift */; };
 		0530DC3C2768EE4F00EF4548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */; };
 		0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */; };
-		0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3F2768EE4F00EF4548 /* ViewController.swift */; };
-		0530DC432768EE4F00EF4548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0530DC412768EE4F00EF4548 /* Main.storyboard */; };
+		0530DC402768EE4F00EF4548 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC3F2768EE4F00EF4548 /* AuthorizationViewController.swift */; };
+		0530DC432768EE4F00EF4548 /* AuthorizationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0530DC412768EE4F00EF4548 /* AuthorizationViewController.storyboard */; };
 		0530DC452768EE5100EF4548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0530DC442768EE5100EF4548 /* Assets.xcassets */; };
 		0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0530DC462768EE5100EF4548 /* LaunchScreen.storyboard */; };
 		0530DC552768F33900EF4548 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530DC542768F33900EF4548 /* UITextField+.swift */; };
@@ -32,6 +32,8 @@
 		0543B5722779D2C10070C9DE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5712779D2C10070C9DE /* Poppins-Regular.ttf */; };
 		0543B5742779D4450070C9DE /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5732779D4450070C9DE /* Poppins-Bold.ttf */; };
 		0543B5762779E3DE0070C9DE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */; };
+		0543B578277A0B090070C9DE /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0543B577277A0B080070C9DE /* StoryboardInitializable.swift */; };
+		0543B57C277A585C0070C9DE /* ForgotPasswodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0543B57B277A585C0070C9DE /* ForgotPasswodViewController.swift */; };
 		05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */; };
 		05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */; };
 		05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */; };
@@ -43,6 +45,15 @@
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
+		05C077E7277B0D8F00B1BE55 /* AppCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */; };
+		05C077E9277B0F1600B1BE55 /* PreLoaderCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */; };
+		05C077EB277B237700B1BE55 /* PreloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077EA277B237700B1BE55 /* PreloadViewModel.swift */; };
+		05C077EE277B29DC00B1BE55 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077ED277B29DC00B1BE55 /* NetworkService.swift */; };
+		05C077F0277B2AA100B1BE55 /* AuthorizationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */; };
+		05C077F4277B2DD700B1BE55 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077F3277B2DD700B1BE55 /* WelcomeViewModel.swift */; };
+		05C077F8277BA05100B1BE55 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077F7277BA05100B1BE55 /* ForgotPasswordViewModel.swift */; };
+		05C077FA277BAF2400B1BE55 /* CodeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077F9277BAF2400B1BE55 /* CodeTextFieldView.swift */; };
+		05C077FD277BAF3300B1BE55 /* CodeTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */; };
 		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
 		05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED518E2770C1A500292C9B /* HomeViewController.storyboard */; };
 		05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED51902770C1B300292C9B /* HomeViewController.swift */; };
@@ -54,8 +65,8 @@
 		0530DC382768EE4F00EF4548 /* AutorisationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutorisationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0530DC3F2768EE4F00EF4548 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0530DC422768EE4F00EF4548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0530DC3F2768EE4F00EF4548 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		0530DC422768EE4F00EF4548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthorizationViewController.storyboard; sourceTree = "<group>"; };
 		0530DC442768EE5100EF4548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0530DC472768EE5100EF4548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0530DC492768EE5100EF4548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +88,8 @@
 		0543B5712779D2C10070C9DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		0543B5732779D4450070C9DE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		0543B577277A0B080070C9DE /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		0543B57B277A585C0070C9DE /* ForgotPasswodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswodViewController.swift; sourceTree = "<group>"; };
 		05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLoaderViewController.storyboard; sourceTree = "<group>"; };
 		05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderViewController.swift; sourceTree = "<group>"; };
 		05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +101,15 @@
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
+		05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCordinator.swift; sourceTree = "<group>"; };
+		05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderCordinator.swift; sourceTree = "<group>"; };
+		05C077EA277B237700B1BE55 /* PreloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewModel.swift; sourceTree = "<group>"; };
+		05C077ED277B29DC00B1BE55 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCoordinator.swift; sourceTree = "<group>"; };
+		05C077F3277B2DD700B1BE55 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		05C077F7277BA05100B1BE55 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		05C077F9277BAF2400B1BE55 /* CodeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextFieldView.swift; sourceTree = "<group>"; };
+		05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeTextFieldView.xib; sourceTree = "<group>"; };
 		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		05ED518E2770C1A500292C9B /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		05ED51902770C1B300292C9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +166,7 @@
 		0530DC4F2768EE5700EF4548 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				05C077FB277BAF2900B1BE55 /* CodeTextFieldView */,
 				0530DC5E2768FB7800EF4548 /* TextFieldView */,
 				0530DC6927690C5900EF4548 /* AView.swift */,
 				0530DC6B27690E2E00EF4548 /* AColor.swift */,
@@ -167,6 +190,7 @@
 				0530DC9C276AA74100EF4548 /* UILabel+.swift */,
 				05AE7EDD2775E34F000909A5 /* UICollectionVIew+.swift */,
 				05AE7EE02775E49F000909A5 /* IUCollectionViewCell+.swift */,
+				0543B577277A0B080070C9DE /* StoryboardInitializable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -174,6 +198,7 @@
 		0530DC512768EE6500EF4548 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				05C077E5277B0D2100B1BE55 /* Cordinator */,
 				0543B5702779D2AC0070C9DE /* Font */,
 				0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */,
 				0530DC3D2768EE4F00EF4548 /* SceneDelegate.swift */,
@@ -196,8 +221,9 @@
 		0530DC532768EE8000EF4548 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				0530DC3F2768EE4F00EF4548 /* ViewController.swift */,
-				0530DC412768EE4F00EF4548 /* Main.storyboard */,
+				0530DC412768EE4F00EF4548 /* AuthorizationViewController.storyboard */,
+				0543B57A277A582C0070C9DE /* ForgotPasswd */,
+				0543B579277A58170070C9DE /* Authorization */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -205,6 +231,7 @@
 		0530DC562768F3B800EF4548 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				05C077EC277B29CB00B1BE55 /* NetworkService */,
 				05B9C05E2771EC3900BC9D88 /* Validators */,
 				0530DC572768F3C000EF4548 /* Logger.swift */,
 				0530DC9F276B499200EF4548 /* Validator.swift */,
@@ -239,11 +266,31 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		0543B579277A58170070C9DE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				0530DC3F2768EE4F00EF4548 /* AuthorizationViewController.swift */,
+				05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		0543B57A277A582C0070C9DE /* ForgotPasswd */ = {
+			isa = PBXGroup;
+			children = (
+				0543B57B277A585C0070C9DE /* ForgotPasswodViewController.swift */,
+				05C077F7277BA05100B1BE55 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPasswd;
+			sourceTree = "<group>";
+		};
 		05AE7ECE27746E2C000909A5 /* PreLoader */ = {
 			isa = PBXGroup;
 			children = (
 				05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */,
 				05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */,
+				05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */,
+				05C077EA277B237700B1BE55 /* PreloadViewModel.swift */,
 			);
 			path = PreLoader;
 			sourceTree = "<group>";
@@ -254,6 +301,7 @@
 				05AE7ED82775DC03000909A5 /* WelcomeTextCollectionCell */,
 				05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */,
 				05AE7ED62775C8CF000909A5 /* WelcomeViewController.storyboard */,
+				05C077F3277B2DD700B1BE55 /* WelcomeViewModel.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -274,6 +322,31 @@
 				05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		05C077E5277B0D2100B1BE55 /* Cordinator */ = {
+			isa = PBXGroup;
+			children = (
+				05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */,
+			);
+			path = Cordinator;
+			sourceTree = "<group>";
+		};
+		05C077EC277B29CB00B1BE55 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				05C077ED277B29DC00B1BE55 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		05C077FB277BAF2900B1BE55 /* CodeTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				05C077F9277BAF2400B1BE55 /* CodeTextFieldView.swift */,
+				05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */,
+			);
+			path = CodeTextFieldView;
 			sourceTree = "<group>";
 		};
 		05ED518D2770BFC700292C9B /* Home */ = {
@@ -363,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0530DC482768EE5100EF4548 /* LaunchScreen.storyboard in Resources */,
+				05C077FD277BAF3300B1BE55 /* CodeTextFieldView.xib in Resources */,
 				05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */,
 				0543B5762779E3DE0070C9DE /* Poppins-SemiBold.ttf in Resources */,
 				05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */,
@@ -372,7 +446,7 @@
 				05AE7ED72775C8CF000909A5 /* WelcomeViewController.storyboard in Resources */,
 				0543B5742779D4450070C9DE /* Poppins-Bold.ttf in Resources */,
 				05AE7EDC2775DC27000909A5 /* WelcomeTextCollectionViewCell.xib in Resources */,
-				0530DC432768EE4F00EF4548 /* Main.storyboard in Resources */,
+				0530DC432768EE4F00EF4548 /* AuthorizationViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,33 +500,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C077E7277B0D8F00B1BE55 /* AppCordinator.swift in Sources */,
+				05C077F4277B2DD700B1BE55 /* WelcomeViewModel.swift in Sources */,
 				0530DC7227693C3F00EF4548 /* ATextField.swift in Sources */,
 				0530DC6C27690E2E00EF4548 /* AColor.swift in Sources */,
 				0530DCA0276B499200EF4548 /* Validator.swift in Sources */,
 				050F85D427707ED00085ADB1 /* ATextView.swift in Sources */,
 				0530DC5D2768F5EF00EF4548 /* UIViewController+.swift in Sources */,
 				05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */,
+				05C077E9277B0F1600B1BE55 /* PreLoaderCordinator.swift in Sources */,
 				05AE7EE12775E49F000909A5 /* IUCollectionViewCell+.swift in Sources */,
 				05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */,
 				0530DC582768F3C000EF4548 /* Logger.swift in Sources */,
-				0530DC402768EE4F00EF4548 /* ViewController.swift in Sources */,
+				0530DC402768EE4F00EF4548 /* AuthorizationViewController.swift in Sources */,
 				05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */,
 				05AE7EDB2775DC27000909A5 /* WelcomeTextCollectionViewCell.swift in Sources */,
 				05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */,
+				05C077EB277B237700B1BE55 /* PreloadViewModel.swift in Sources */,
 				05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */,
 				0530DC3C2768EE4F00EF4548 /* AppDelegate.swift in Sources */,
 				05AE7EDE2775E34F000909A5 /* UICollectionVIew+.swift in Sources */,
 				0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */,
 				0530DC6E2769108000EF4548 /* UIColor+.swift in Sources */,
 				0530DC762769F56600EF4548 /* String+.swift in Sources */,
+				05C077EE277B29DC00B1BE55 /* NetworkService.swift in Sources */,
 				0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */,
+				0543B57C277A585C0070C9DE /* ForgotPasswodViewController.swift in Sources */,
+				0543B578277A0B090070C9DE /* StoryboardInitializable.swift in Sources */,
 				05BB4BC22770A07800207FC2 /* AFont.swift in Sources */,
 				0530DC552768F33900EF4548 /* UITextField+.swift in Sources */,
 				0530DC642769000300EF4548 /* UIView+.swift in Sources */,
 				0530DC5B2768F3F800EF4548 /* BaseViewController.swift in Sources */,
 				0530DC6A27690C5900EF4548 /* AView.swift in Sources */,
+				05C077FA277BAF2400B1BE55 /* CodeTextFieldView.swift in Sources */,
+				05C077F0277B2AA100B1BE55 /* AuthorizationCoordinator.swift in Sources */,
 				05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */,
 				0530DC682769033000EF4548 /* TextFieldView.swift in Sources */,
+				05C077F8277BA05100B1BE55 /* ForgotPasswordViewModel.swift in Sources */,
 				0530DC7427693F4600EF4548 /* AButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,12 +544,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0530DC412768EE4F00EF4548 /* Main.storyboard */ = {
+		0530DC412768EE4F00EF4548 /* AuthorizationViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0530DC422768EE4F00EF4548 /* Base */,
 			);
-			name = Main.storyboard;
+			name = AuthorizationViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		0530DC462768EE5100EF4548 /* LaunchScreen.storyboard */ = {
@@ -608,7 +692,6 @@
 				INFOPLIST_FILE = AutorisationApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -638,7 +721,6 @@
 				INFOPLIST_FILE = AutorisationApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

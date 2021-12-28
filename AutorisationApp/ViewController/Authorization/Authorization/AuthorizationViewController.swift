@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class AuthorizationViewController: BaseViewController {
 
     @IBOutlet weak private var topLabel: UILabel!
     @IBOutlet weak private var topLabelFooter: UILabel!
@@ -20,9 +20,14 @@ class ViewController: BaseViewController {
     @IBOutlet weak private var singInApple: AButton!
     @IBOutlet weak private var singInGoogle: AButton!
     @IBOutlet weak private var loginTextView: ATextView!
+    
+    var viewModel: AuthorizationViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBackButton(isHidden: true)
+        self.navigationBar(isHidden: true)
+        
         setTextViewFieldAndLabel()
         setupLabel()
         setupButton()
@@ -88,12 +93,7 @@ class ViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func singUpActions(_ sender: Any) {
-        let homeVC = HomeViewController()
-        let homeStoryborad = homeVC.instance.instantiateViewController(withIdentifier: homeVC.className) as? HomeViewController
-        guard let presentHome = homeStoryborad else {
-            return }
-        presentHome.modalPresentationStyle = .fullScreen
-        self.present(presentHome, animated: true, completion: nil)
+        
     }
 
     @IBAction func singUpAppleActions(_ sender: Any) {
@@ -106,7 +106,7 @@ class ViewController: BaseViewController {
 }
 
 // MARK: - TextFieldViewDelegate
-extension ViewController: TextFieldViewDelegate {
+extension AuthorizationViewController: TextFieldViewDelegate {
 
     func shouldReturn(_ sender: TextFieldView) -> Bool {
         if let view = self.view.viewWithTag(sender.tag + 1) {
@@ -120,7 +120,7 @@ extension ViewController: TextFieldViewDelegate {
 }
 
 // MARK: - ATextViewDelegate
-extension ViewController: ATextViewDelegate {
+extension AuthorizationViewController: ATextViewDelegate {
     func didSelected(item: String) {
         switch item {
         case "111":
@@ -128,7 +128,7 @@ extension ViewController: ATextViewDelegate {
         case "222":
             self.showComingSoonAlert()
         case "333":
-            self.showComingSoonAlert()
+            viewModel?.showForgotPassword()
         default:
             print("")
 

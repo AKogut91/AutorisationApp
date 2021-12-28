@@ -24,9 +24,11 @@ class WelcomeViewController: BaseViewController {
     
     private lazy var cell = WelcomeTextCollectionViewCell()
     private var data = [WelcodeData]()
+    var viewModel: WelcomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBackButton(isHidden: true)
         setupData()
         setupCollectionView()
         setupPageController()
@@ -95,7 +97,7 @@ class WelcomeViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func testButtonAction(_ sender: Any) {
-        
+        viewModel?.showAuthorization()
     }
     
 }

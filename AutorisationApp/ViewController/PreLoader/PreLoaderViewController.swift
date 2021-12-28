@@ -14,6 +14,7 @@ class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     @IBOutlet private weak var backgroundView: UIImageView!
     @IBOutlet private weak var logoImage: UIImageView!
     
+    // MARK: - UI
     private let color1: CGColor = AColor.preloadColor1.cgColor
     private let color2: CGColor = AColor.preloadColor2.cgColor
     private let color3: CGColor = AColor.preloadColor3.cgColor
@@ -23,6 +24,9 @@ class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     private var gradientColorSet: [[CGColor]] = []
     private var duration = 3.0
     private var scale: CGFloat = 0.0
+    
+    // MARK: - ViewModel
+    var viewModel: PreloadViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,16 +174,6 @@ class PreLoaderViewController: BaseViewController, CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.logger.log()
-        
-        // MARK: - Make to Coordinator
-        
-        let presentedVC = WelcomeViewController()
-        let presentedStoryborad = presentedVC.instance.instantiateViewController(withIdentifier: presentedVC.className) as? WelcomeViewController
-        guard let presentVC = presentedStoryborad else {
-            return
-        }
-        presentVC.modalPresentationStyle = .fullScreen
-        self.present(presentVC, animated: true, completion: nil)
+        self.viewModel?.presentWelcomVC()
     }
-    
 }

@@ -82,6 +82,16 @@ class BaseViewController: UIViewController {
             NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         }
     }
+    
+    // MARK: - NavigatioCotroller
+    
+    func navigationBackButton(isHidden: Bool) {
+        self.navigationItem.setHidesBackButton(isHidden, animated: false)
+    }
+    
+    func navigationBar(isHidden: Bool) {
+        self.navigationController?.setNavigationBarHidden(isHidden, animated: false)
+    }
 
 }
 

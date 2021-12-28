@@ -55,9 +55,10 @@ class AButton: UIButton {
         case .standart:
             backgroundColor = AColor.purpleColor
             setTitleColor(.white, for: .normal)
+            tintColor = .white
         case .socialLogin:
             backgroundColor = AColor.backgroundTextField
-            setTitleColor(.white, for: .normal)
+            setTitleColor(AColor.topTextColor, for: .normal)
         case .primary:
             backgroundColor = .white
             setTitleColor(.white, for: .normal)

@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-private let lightBackground = UIColor.black
+private let lightBackground = UIColor.init(hex: "F6F7F9")
 private let darkBackground = UIColor.init(hex: "161824")
 
-private let lightTextViewBackground = UIColor.black
+private let lightTextViewBackground = UIColor.init(hex: "FFFFFF")
 private let darkTextViewBackground = UIColor.init(hex: "2B2F46")
 
-private let lightError = UIColor.black
+private let lightError = UIColor.init(hex: "FF5271")
 private let darkError = UIColor.init(hex: "FF5271")
 
 private let lightTopLabel = UIColor.init(hex: "161824")

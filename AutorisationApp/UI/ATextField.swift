@@ -94,7 +94,7 @@ class ATextField: UITextField {
         self.placeholder = placeholder
         self.clearButtonMode = .whileEditing
         self.borderStyle = .none
-        self.textColor = .white
+        self.textColor = AColor.topTextColor
         self.tintColor = .white
         self.minimumFontSize = kMinimumFontSize
         self.adjustsFontSizeToFitWidth = true
