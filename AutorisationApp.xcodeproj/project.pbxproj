@@ -54,6 +54,7 @@
 		05C077F8277BA05100B1BE55 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077F7277BA05100B1BE55 /* ForgotPasswordViewModel.swift */; };
 		05C077FA277BAF2400B1BE55 /* CodeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077F9277BAF2400B1BE55 /* CodeTextFieldView.swift */; };
 		05C077FD277BAF3300B1BE55 /* CodeTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */; };
+		05C077FF277BB5B600B1BE55 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077FE277BB5B600B1BE55 /* AuthorizationViewModel.swift */; };
 		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
 		05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED518E2770C1A500292C9B /* HomeViewController.storyboard */; };
 		05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED51902770C1B300292C9B /* HomeViewController.swift */; };
@@ -110,6 +111,7 @@
 		05C077F7277BA05100B1BE55 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		05C077F9277BAF2400B1BE55 /* CodeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextFieldView.swift; sourceTree = "<group>"; };
 		05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeTextFieldView.xib; sourceTree = "<group>"; };
+		05C077FE277BB5B600B1BE55 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		05ED518E2770C1A500292C9B /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		05ED51902770C1B300292C9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			children = (
 				0530DC3F2768EE4F00EF4548 /* AuthorizationViewController.swift */,
 				05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */,
+				05C077FE277BB5B600B1BE55 /* AuthorizationViewModel.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */,
 				0543B57C277A585C0070C9DE /* ForgotPasswodViewController.swift in Sources */,
 				0543B578277A0B090070C9DE /* StoryboardInitializable.swift in Sources */,
+				05C077FF277BB5B600B1BE55 /* AuthorizationViewModel.swift in Sources */,
 				05BB4BC22770A07800207FC2 /* AFont.swift in Sources */,
 				0530DC552768F33900EF4548 /* UITextField+.swift in Sources */,
 				0530DC642769000300EF4548 /* UIView+.swift in Sources */,
