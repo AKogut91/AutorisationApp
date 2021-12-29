@@ -14,6 +14,7 @@ protocol ATextViewDelegate: AnyObject {
 
 enum AttrType {
     case link
+    case linkWithOutLine
     case color
 }
 
@@ -24,30 +25,29 @@ struct AttributesText {
 }
 
 class ATextView: UITextView, UITextViewDelegate {
-
-    enum ATextViewType {
-        case undeline
-    }
     
     weak var aTextViewDelegate: ATextViewDelegate?
 
     private var originalText: String = ""
     private var attributes: [AttributesText] = []
     private var defaultTextColor = AColor.topTextColor
+    private var currentTextColor: UIColor!
+    private var currentAligmentText: NSTextAlignment!
 
-    func style(type: ATextViewType, text: String, attrs: [AttributesText] = [], textColor: UIColor = AColor.topTextColor) {
+    func style(text: String,
+               attrs: [AttributesText] = [],
+               textColor: UIColor = AColor.topTextColor,
+               aligmentText: NSTextAlignment = .center) {
 
+        self.currentAligmentText = aligmentText
         self.delegate = self
         self.backgroundColor = .clear
         self.textAlignment = .center
-        self.textColor = AColor.topTextColor
+        self.currentTextColor = textColor
+        self.textColor = currentTextColor
         self.defaultTextColor = textColor
-
-        switch type {
-        case .undeline:
-            originalText = text
-            attributes = attrs
-        }
+        self.originalText = text
+        self.attributes = attrs
     }
 
     func addAttr(_ attr: (AttributesText)) {
@@ -57,7 +57,7 @@ class ATextView: UITextView, UITextViewDelegate {
     func setup() {
         let style = NSMutableParagraphStyle()
         let attributedOriginalText = NSMutableAttributedString(string: originalText)
-        style.alignment = .center
+        style.alignment = currentAligmentText
 
         let fullRange = NSRange(location: 0, length: attributedOriginalText.length)
         attributedOriginalText.addAttribute(NSAttributedString.Key.foregroundColor, value: defaultTextColor, range: fullRange)
@@ -69,7 +69,22 @@ class ATextView: UITextView, UITextViewDelegate {
 
             case .link:
                 attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: item.value ?? "", range: arange)
-
+                
+                self.linkTextAttributes = [
+                               kCTForegroundColorAttributeName: UIColor.blue,
+                               kCTUnderlineStyleAttributeName: NSUnderlineStyle.single.rawValue
+                           ] as [NSAttributedString.Key: Any]
+                
+            case .linkWithOutLine:
+                
+                attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: item.value ?? "", range: arange)
+                style.alignment = currentAligmentText
+                self.linkTextAttributes = [
+                    NSAttributedString.Key.foregroundColor: currentTextColor,
+                    NSAttributedString.Key.underlineColor: UIColor.clear,
+                    NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+                ] as [NSAttributedString.Key: Any]
+                
             case .color:
                 var color = UIColor.red
                 if let currentColor = item.value as? UIColor { color = currentColor }
@@ -80,11 +95,6 @@ class ATextView: UITextView, UITextViewDelegate {
         }
 
         attributedOriginalText.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: fullRange)
-
-        self.linkTextAttributes = [
-                       kCTForegroundColorAttributeName: UIColor.blue,
-                       kCTUnderlineStyleAttributeName: NSUnderlineStyle.single.rawValue
-                   ] as [NSAttributedString.Key: Any]
 
         self.attributedText = attributedOriginalText
     }

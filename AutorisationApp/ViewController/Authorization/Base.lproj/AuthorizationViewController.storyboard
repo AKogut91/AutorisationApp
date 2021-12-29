@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wSu-2z-k3l">
-                                <rect key="frame" x="16" y="64" width="382" height="604"/>
+                                <rect key="frame" x="16" y="64" width="382" height="633"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-Np-cIB">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
@@ -52,14 +52,18 @@
                                             <constraint firstAttribute="height" priority="50" constant="50" id="kQJ-Qd-Rct"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-4Q-k3B">
-                                        <rect key="frame" x="0.0" y="249.5" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="moq-QR-gGU" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="249.5" width="382" height="49.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="qzR-wJ-3l7"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-k9-Fm1" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280" width="382" height="56"/>
+                                        <rect key="frame" x="0.0" y="309" width="382" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="D3r-Jw-3OF"/>
                                         </constraints>
@@ -69,8 +73,8 @@
                                             <action selector="singUpActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vv-Aj-hUh"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-xP-HkL" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="346" width="382" height="49.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-xP-HkL" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="375" width="382" height="49.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="50" constant="50" id="lh4-aQ-1DV"/>
@@ -80,7 +84,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnu-7o-JtA" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="405.5" width="382" height="56"/>
+                                        <rect key="frame" x="0.0" y="434.5" width="382" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="U3b-dS-BG5"/>
                                         </constraints>
@@ -88,13 +92,15 @@
                                         <inset key="titleEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="8"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="apple" title="Apple" imagePadding="12"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="apple" title="Apple" imagePadding="12">
+                                            <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="singUpAppleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMF-Yq-srh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICC-vL-uQ2" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="471.5" width="382" height="56"/>
+                                        <rect key="frame" x="0.0" y="500.5" width="382" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="aZQ-Wt-7dd"/>
                                         </constraints>
@@ -104,8 +110,8 @@
                                             <action selector="singUpGoogleActions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ons-cr-5di"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-e7-q5T" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="537.5" width="382" height="66.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-e7-q5T" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="566.5" width="382" height="66.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="50" constant="50" id="0wj-fi-vfG"/>
@@ -140,7 +146,7 @@
                         <outlet property="loginTextView" destination="YJl-e7-q5T" id="Px3-7u-nQR"/>
                         <outlet property="passwordTextField" destination="TIW-7F-boY" id="Ho8-XX-Anq"/>
                         <outlet property="privatePolicyTextView" destination="oWo-xP-HkL" id="MK1-VF-A2C"/>
-                        <outlet property="signInSocialMediaLabel" destination="T0l-4Q-k3B" id="Cdd-UE-ORb"/>
+                        <outlet property="signInSocialMediaLabel" destination="moq-QR-gGU" id="EYV-c9-9NL"/>
                         <outlet property="singInApple" destination="Lnu-7o-JtA" id="7Ji-F8-jXQ"/>
                         <outlet property="singInGoogle" destination="ICC-vL-uQ2" id="gl9-HE-ZV5"/>
                         <outlet property="singUp" destination="3cq-k9-Fm1" id="5yN-2L-nsS"/>

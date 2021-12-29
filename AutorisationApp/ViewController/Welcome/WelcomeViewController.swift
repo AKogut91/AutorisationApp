@@ -36,18 +36,6 @@ class WelcomeViewController: BaseViewController {
         setupTextView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-      //  var time = 0.0
-      //  for row in 0...data.count - 1 {
-      //      time += 3
-      //      DispatchQueue.main.asyncAfter(deadline: .now() + time) { [weak self] in
-      //          self?.collectionView.scrollToItem(at: IndexPath(row: row, section: 0), at: .centeredHorizontally, animated: true)
-      //      }
-      //  }
-    }
-    
     // MARK: - Setup Data
     
     private func setupData() {
@@ -78,9 +66,8 @@ class WelcomeViewController: BaseViewController {
     
     private func setupTextView() {
         haveAccountTextView.aTextViewDelegate = self
-        haveAccountTextView.style(type: .undeline,
-                                  text: "Already have an account? Log in", textColor: AColor.purpleColor)
-        haveAccountTextView.addAttr(AttributesText(text: "Log in", type: .link, value: "000"))
+        haveAccountTextView.style(text: "Already have an account? Log in", textColor: AColor.purpleColor)
+        haveAccountTextView.addAttr(AttributesText(text: "Log in", type: .link, value: "333"))
         haveAccountTextView.addAttr(AttributesText(text: "Log in", type: .color, value: AColor.purpleColor))
         haveAccountTextView.setup()
     }
@@ -97,7 +84,7 @@ class WelcomeViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func testButtonAction(_ sender: Any) {
-        viewModel?.showAuthorization()
+        viewModel?.showRegistrationAuthorization()
     }
     
 }
@@ -144,11 +131,11 @@ extension WelcomeViewController: UIScrollViewDelegate {
 }
 
 // MARK: - ATextViewDelegate
-extension WelcomeViewController: ATextViewDelegate {
-    
+ extension WelcomeViewController: ATextViewDelegate {
+
     func didSelected(item: String) {
-        if item == "000" {
-            self.showComingSoonAlert()
+        if item == "333" {
+            self.viewModel?.showLoginAuthorization()
         }
     }
-}
+ }

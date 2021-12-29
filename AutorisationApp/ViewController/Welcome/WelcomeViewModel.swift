@@ -8,7 +8,8 @@
 import Foundation
 
 protocol WelcomeViewModelType {
-    func showAuthorization()
+    func showLoginAuthorization()
+    func showRegistrationAuthorization()
 }
 
 class WelcomeViewModel: WelcomeViewModelType {
@@ -19,8 +20,12 @@ class WelcomeViewModel: WelcomeViewModelType {
         self.coordinator = coordinator
     }
     
-    func showAuthorization() {
-        self.coordinator?.presentAuthorizationCoordinator()
+    func showLoginAuthorization() {
+        self.coordinator?.presentAuthorizationCoordinator(type: .login)
+    }
+    
+    func showRegistrationAuthorization() {
+        self.coordinator?.presentAuthorizationCoordinator(type: .registration)
     }
 
 }

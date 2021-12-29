@@ -35,17 +35,11 @@ class ForgotPasswodViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBackButton(isHidden: true)
-        self.navigationBar(isHidden: false)
+        self.navigationBackButton(isHidden: false)
+        self.delegatBaseNavigation = self
         self.setLeftNavButton()
         self.setupTextField()
         self.state = .email
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationBar(isHidden: true)
     }
     
     // MARK: - UI
@@ -146,17 +140,6 @@ class ForgotPasswodViewController: BaseViewController {
         }
     }
     
-    // MARK: - Navigation
-    
-    private func setLeftNavButton() {
-        let navButton = UIBarButtonItem.init(image: UIImage.init(named: "back"), style: .plain, target: self, action: #selector(self.action))
-        self.navigationItem.leftBarButtonItem = navButton
-    }
-    
-    @objc func action() {
-        self.viewModel?.pop()
-    }
-    
     // MARK: - Actions
     
     @IBAction func saveActions(_ sender: Any) {
@@ -187,4 +170,10 @@ extension ForgotPasswodViewController: TextFieldViewDelegate {
         return true
     }
     
+}
+
+extension ForgotPasswodViewController: BaseNavigationDelegate {
+    func navigationBackAction() {
+        self.viewModel?.pop()
+    }
 }

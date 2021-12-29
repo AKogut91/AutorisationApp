@@ -50,7 +50,7 @@
                                             <action selector="testButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qe8-43-PeD"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hq2-sz-cOh" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hq2-sz-cOh" customClass="ATextView" customModule="AutorisationApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="68" width="382" height="58"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>

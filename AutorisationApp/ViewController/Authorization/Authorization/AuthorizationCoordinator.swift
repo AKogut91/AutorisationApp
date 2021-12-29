@@ -14,32 +14,30 @@ protocol AuthorizationNafigationCoordinator: AnyObject {
 }
 
 class AuthorizationCoordinator: Coordinator, AuthorizationNafigationCoordinator {
-
+        
     private var storyboard: UIStoryboard?
     
     unowned let navigationController: UINavigationController
+    private var authorizationViewController: AuthorizationViewController?
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.authorizationViewController = AuthorizationViewController()
+        self.storyboard = authorizationViewController?.instance
     }
     
     func pop() {
         self.navigationController.popViewController(animated: true)
     }
     
-    func start() {
-        print("❤️ start")
-        let authorizationViewController = AuthorizationViewController()
-        self.storyboard = authorizationViewController.instance
-            
-        let authorizationVC = storyboard?.instantiateViewController(withIdentifier: authorizationViewController.className) as? AuthorizationViewController
-        
-        guard let presentvc = authorizationVC else {
+    func start(type: AuthorizationType) {
+        guard let authorizationVC = storyboard?.instantiateViewController(withIdentifier: authorizationViewController?.className ?? "") as? AuthorizationViewController else {
             return }
-        presentvc.viewModel = AuthorizationViewModel.init(coordinator: self)
-        self.navigationController.pushViewController(presentvc, animated: true)
-    }
         
+        authorizationVC.viewModel = AuthorizationViewModel.init(type: type, coordinator: self)
+        self.navigationController.pushViewController(authorizationVC, animated: true)
+    }
+
     func presentForgotPassword() {
         let forgorPasswordViewController = ForgotPasswodViewController()
         let forgorPasswordVC = storyboard?.instantiateViewController(withIdentifier: forgorPasswordViewController.className) as? ForgotPasswodViewController
@@ -50,5 +48,10 @@ class AuthorizationCoordinator: Coordinator, AuthorizationNafigationCoordinator 
         self.navigationController.pushViewController(presentvc, animated: true)
         
     }
-    
+}
+
+extension AuthorizationCoordinator {
+    func start() {
+        print("")
+    }
 }

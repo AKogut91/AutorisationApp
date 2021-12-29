@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BaseNavigationDelegate: AnyObject {
+    func navigationBackAction()
+}
+
 class BaseViewController: UIViewController {
 
     var keyShowBoard: ((CGFloat) -> Void)?
@@ -15,6 +19,7 @@ class BaseViewController: UIViewController {
 
     private var keyboardNotificationIsUsed = false
 
+    weak var delegatBaseNavigation: BaseNavigationDelegate?
     // MARK: - Life cycle
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,13 +91,29 @@ class BaseViewController: UIViewController {
     // MARK: - NavigatioCotroller
     
     func navigationBackButton(isHidden: Bool) {
-        self.navigationItem.setHidesBackButton(isHidden, animated: false)
+        
+        if !isHidden {
+            setLeftNavButton()
+        }
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     func navigationBar(isHidden: Bool) {
         self.navigationController?.setNavigationBarHidden(isHidden, animated: false)
     }
-
+    
+    // MARK: - Navigation Left Bar ButtonItem
+    
+    func setLeftNavButton() {
+        let navButton = UIBarButtonItem.init(image: UIImage.init(named: "back"), style: .plain, target: self, action: #selector(self.action))
+        self.navigationItem.leftBarButtonItem = navButton
+    }
+    
+    @objc func action() {
+        self.delegatBaseNavigation?.navigationBackAction()
+    }
+    
 }
 
 // MARK: Show Keyboard

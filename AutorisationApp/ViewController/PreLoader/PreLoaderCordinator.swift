@@ -44,8 +44,8 @@ class PreLoaderCordinator: Coordinator, PreLoaderNavigationCordinator {
         self.navigationController.pushViewController(presentvc, animated: true)
     }
     
-    func presentAuthorizationCoordinator() {
+    func presentAuthorizationCoordinator(type: AuthorizationType) {
         let coordinator = AuthorizationCoordinator(navigationController: navigationController)
-        coordinator.start()
+        coordinator.start(type: type)
     }
 }
