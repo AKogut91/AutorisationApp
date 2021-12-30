@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ForgotPasswodViewController: BaseViewController {
-    
+class ForgotPasswodViewController: BaseViewController, TextFieldViewDelegate {
+
     @IBOutlet private weak var topLabel: UILabel!
     @IBOutlet private weak var headerLabel: UILabel!
     @IBOutlet private weak var emailTextField: TextFieldView!
@@ -42,8 +42,17 @@ class ForgotPasswodViewController: BaseViewController {
         self.state = .email
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+    
     // MARK: - UI
     private func setupTextField() {
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.comfirmPassTextFIeld.delegate = self
+        
         self.emailTextField.alpha = 0
         self.codeTextField.alpha = 0
         self.passwordTextField.alpha = 0
@@ -55,11 +64,8 @@ class ForgotPasswodViewController: BaseViewController {
         self.comfirmPassTextFIeld.backgroundColor = .clear
         
         self.emailTextField.style(type: .email, placeholder: "Email")
-        self.emailTextField.delegate = self
         self.passwordTextField.style(type: .password, placeholder: "Password")
-        self.passwordTextField.delegate = self
         self.comfirmPassTextFIeld.style(type: .password, placeholder: "Password")
-        self.comfirmPassTextFIeld.delegate = self
     }
     
     private func setupUI() {
@@ -145,31 +151,43 @@ class ForgotPasswodViewController: BaseViewController {
     @IBAction func saveActions(_ sender: Any) {
         switch state {
         case .email:
-            showLabels(isHidden: true)
-            state = .code
+            emailTextField.endEditing { [weak self] correct  in
+                if correct {
+                    self?.showLabels(isHidden: true)
+                    self?.state = .code
+                }
+            }
         case .code:
-            showLabels(isHidden: true)
-            state = .password
+            if codeTextField.getCode().count == 6 {
+                showLabels(isHidden: true)
+                state = .password
+                passwordTextField.becomeFirstResponder()
+            } else {
+                self.showComingSoonAlert()
+            }
         case .password:
-            showLabels(isHidden: true)
-            state = .changesSaved
+            comfirmPassTextFIeld.endEditing { [weak self] correct in
+                if correct {
+                    self?.showLabels(isHidden: true)
+                    self?.state = .changesSaved
+                }
+            }
         case .changesSaved:
             print("❤️ Save to Server")
             self.showComingSoonAlert()
         case .none:
             showLabels(isHidden: true)
-            print("")
         }
     }
-}
-
-// MARK: - Delegate
-extension ForgotPasswodViewController: TextFieldViewDelegate {
     
     func shouldReturn(_ sender: TextFieldView) -> Bool {
-        return true
+        if let view = self.view.viewWithTag(sender.tag + 1) {
+            view.becomeFirstResponder()
+        } else {
+            sender.resignFirstResponder()
+        }
+        return false
     }
-    
 }
 
 extension ForgotPasswodViewController: BaseNavigationDelegate {

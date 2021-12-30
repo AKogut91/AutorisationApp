@@ -22,6 +22,7 @@ class ATextField: UITextField {
     enum ATextFieldType {
         case email
         case password
+        case code
     }
 
     enum ATextFieldCornerRadius: CGFloat {
@@ -76,6 +77,13 @@ class ATextField: UITextField {
             self.keyboardType = .emailAddress
             self.textContentType = .oneTimeCode
             self.autocorrectionType = .no
+        case .code:
+            self.returnKeyType = .go
+            self.keyboardType = .numberPad
+            self.textAlignment = .center
+            self.clearButtonMode = .never
+            self.font = AFonts.semiBold.size(.s18)
+            self.minimumFontSize = .infinity
         }
     }
 

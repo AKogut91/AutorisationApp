@@ -18,6 +18,7 @@ enum AFonts: String {
     enum FontSize: CGFloat {
         case s12 = 12
         case s14 = 14
+        case s18 = 18
         case s28 = 28
         case s32 = 32
         case s35 = 35

@@ -25,7 +25,8 @@ class TextFieldView: UIView, UITextFieldDelegate {
     private var validator: Validator?
     private var textFieldType: TextFieldType?
     private var linkedPasswordTextField: TextFieldView?
-
+    private var isCorrectText = false
+    
     weak var delegate: TextFieldViewDelegate?
 
     // MARK: - Lifecycle methods
@@ -126,6 +127,8 @@ class TextFieldView: UIView, UITextFieldDelegate {
                 errorLabel.alpha = 0
                 textfield.isShowErorr(false)
             }
+            
+            isCorrectText = true
 
         } catch let error as LocalizedError {
             errorLabel.text = error.errorDescription
@@ -143,6 +146,11 @@ class TextFieldView: UIView, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return self.delegate?.shouldReturn(self) ?? true
+    }
+    
+    func endEditing(completion: @escaping (Bool) -> Void) {
+        self.resignFirstResponder()
+        completion(isCorrectText)
     }
 
     @discardableResult override func becomeFirstResponder() -> Bool {

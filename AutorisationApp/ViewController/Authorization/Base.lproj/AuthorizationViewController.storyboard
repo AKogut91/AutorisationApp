@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uUf-oY-PLh">
-                                <rect key="frame" x="16" y="54" width="382" height="366"/>
+                                <rect key="frame" x="16" y="54" width="382" height="348"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-CX-Qd9">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="26.5"/>
@@ -182,35 +182,35 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-E2-d5k" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="62" width="382" height="56"/>
+                                        <rect key="frame" x="0.0" y="62" width="382" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="XYD-zB-zYM"/>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="fae-5n-u0k"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUd-W4-RHB" customClass="CodeTextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="126" width="382" height="48"/>
+                                        <rect key="frame" x="0.0" y="120" width="382" height="48"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="kMi-4n-jLk"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-9t-LWY" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="182" width="382" height="56"/>
+                                    <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-9t-LWY" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="176" width="382" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="Rze-UK-N18"/>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="Rze-UK-N18"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6N-2s-pSu" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="246" width="382" height="56"/>
+                                    <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6N-2s-pSu" customClass="TextFieldView" customModule="AutorisationApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="234" width="382" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="g9Y-Jd-KrH"/>
+                                            <constraint firstAttribute="height" priority="50" constant="50" id="g9Y-Jd-KrH"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g92-IL-OZI" customClass="AButton" customModule="AutorisationApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="310" width="382" height="56"/>
+                                        <rect key="frame" x="0.0" y="292" width="382" height="56"/>
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="uOa-MH-LKc"/>
