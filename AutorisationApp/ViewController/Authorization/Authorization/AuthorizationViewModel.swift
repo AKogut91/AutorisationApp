@@ -9,6 +9,7 @@ import Foundation
 
 protocol AuthorizationViewModelType: AnyObject {
     func showForgotPassword()
+    func showSubscribe()
 }
 
 enum AuthorizationType {
@@ -43,6 +44,10 @@ class AuthorizationViewModel: AuthorizationViewModelType {
     
     func showForgotPassword() {
         self.coordinator?.presentForgotPassword()
+    }
+    
+    func showSubscribe() {
+        self.coordinator?.presentSubscribe()
     }
     
     func pop() {

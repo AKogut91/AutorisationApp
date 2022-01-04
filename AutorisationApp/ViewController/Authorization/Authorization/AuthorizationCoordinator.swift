@@ -11,6 +11,7 @@ import UIKit
 protocol AuthorizationNafigationCoordinator: AnyObject {
     func pop()
     func presentForgotPassword()
+    func presentSubscribe()
 }
 
 class AuthorizationCoordinator: Coordinator, AuthorizationNafigationCoordinator {
@@ -48,6 +49,11 @@ class AuthorizationCoordinator: Coordinator, AuthorizationNafigationCoordinator 
         self.navigationController.pushViewController(presentvc, animated: true)
         
     }
+    
+    func presentSubscribe() {
+        SubscribeCoordinator(navigationController: navigationController).start()
+    }
+    
 }
 
 extension AuthorizationCoordinator {

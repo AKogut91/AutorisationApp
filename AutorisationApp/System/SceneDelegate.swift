@@ -24,8 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        let preloaderCoordinator = PreLoaderCordinator(navigationController: navigationVC)
-        preloaderCoordinator.start()
+       let preloaderCoordinator = PreLoaderCoordinator(navigationController: navigationVC)
+       preloaderCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

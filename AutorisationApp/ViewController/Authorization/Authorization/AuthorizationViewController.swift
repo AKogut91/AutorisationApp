@@ -136,7 +136,7 @@ class AuthorizationViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func singUpActions(_ sender: Any) {
-        self.showComingSoonAlert()
+        viewModel?.showSubscribe()
     }
     
     @IBAction func singUpAppleActions(_ sender: Any) {

@@ -32,6 +32,9 @@ private let preloadLightColor2 = UIColor.init(hex: "A1C1FF")
 private let preloadLightColor3 = UIColor.init(hex: "B7D4FF")
 private let preloadLightColor4 = UIColor.init(hex: "FFFFFF")
 
+private let colorViewDark = UIColor.init(hex: "2B2F46")
+private let colorViewLight = UIColor.init(hex: "FFFFFF")
+
 enum AColor {
     // MARK: - Fields
 
@@ -141,6 +144,18 @@ enum AColor {
                 }
             })
         } else { return preloadLightColor4 }
+    }
+    
+    static var view: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection -> UIColor in
+                switch traitCollection.userInterfaceStyle {
+                case .light, .unspecified: return colorViewLight
+                case .dark: return colorViewDark
+                @unknown default: fatalError()
+                }
+            })
+        } else { return colorViewLight }
     }
     
 }

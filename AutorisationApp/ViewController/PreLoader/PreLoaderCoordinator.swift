@@ -13,7 +13,7 @@ protocol PreLoaderNavigationCordinator {
     func presentWelcomeVC()
 }
 
-class PreLoaderCordinator: Coordinator, PreLoaderNavigationCordinator {
+class PreLoaderCoordinator: Coordinator, PreLoaderNavigationCordinator {
     
     unowned let navigationController: UINavigationController
     

@@ -14,9 +14,9 @@ protocol WelcomeViewModelType {
 
 class WelcomeViewModel: WelcomeViewModelType {
     
-    private var coordinator: PreLoaderCordinator?
+    private var coordinator: PreLoaderCoordinator?
     
-    init(coordinator: PreLoaderCordinator?) {
+    init(coordinator: PreLoaderCoordinator?) {
         self.coordinator = coordinator
     }
     

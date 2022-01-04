@@ -21,17 +21,21 @@ class AView: UIView {
         case translucent
         case outlined
         case outlinedWarining
+        case outlinedSelected
     }
 
     enum ViewStyle {
         case contentBody
+        case seletedBody
 
     }
 
     func style(_ style: ViewStyle) {
         switch style {
         case.contentBody:
-            configure(as: .filled, with: AColor.backgroundTextField, cornerRadius: .regular)
+            configure(as: .filled, with: AColor.view, cornerRadius: .regular)
+        case .seletedBody:
+            configure(as: .outlinedSelected, with: AColor.view, cornerRadius: .regular)
         }
     }
 
@@ -42,19 +46,15 @@ class AView: UIView {
                            isLightBlurred: Bool = false) {
         switch style {
         case .filled:
-            backgroundColor = color
-            layer.borderColor = UIColor.clear.cgColor
-            layer.borderWidth = 1.0
+            setupStyle(backgroundColor: color, borderColor: .clear, borderWidth: 1.0)
         case .translucent:
-            backgroundColor = .clear
-            layer.borderColor = UIColor.clear.cgColor
-            layer.borderWidth = 1.0
+            setupStyle(backgroundColor: .clear, borderColor: .clear, borderWidth: 1.0)
         case .outlined:
-            backgroundColor = .clear
-            layer.borderColor = color.cgColor
-            layer.borderWidth = 1.0
+            setupStyle(backgroundColor: color, borderColor: color, borderWidth: 1.0)
         case .outlinedWarining:
             setupStyle(backgroundColor: color, borderColor: AColor.backgroundErrorText, borderWidth: 1.0)
+        case.outlinedSelected:
+            setupStyle(backgroundColor: color, borderColor: AColor.purpleColor, borderWidth: 1.0)
         }
 
         layer.cornerRadius = cornerRadius.rawValue

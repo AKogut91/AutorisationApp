@@ -34,6 +34,10 @@
 		0543B5762779E3DE0070C9DE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */; };
 		0543B578277A0B090070C9DE /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0543B577277A0B080070C9DE /* StoryboardInitializable.swift */; };
 		0543B57C277A585C0070C9DE /* ForgotPasswodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0543B57B277A585C0070C9DE /* ForgotPasswodViewController.swift */; };
+		057E4AEE27843C38002353C4 /* SubscribeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E4AED27843C38002353C4 /* SubscribeCoordinator.swift */; };
+		057E4AF0278442EC002353C4 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E4AEF278442EC002353C4 /* UITableView+.swift */; };
+		057E4AF22784437D002353C4 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E4AF12784437D002353C4 /* UITableViewCell+.swift */; };
+		057E4AF4278455F0002353C4 /* SubscribeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E4AF3278455F0002353C4 /* SubscribeViewModel.swift */; };
 		05AE7ED027746E52000909A5 /* PreLoaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */; };
 		05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */; };
 		05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */; };
@@ -45,8 +49,8 @@
 		05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */; };
 		05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */; };
 		05BB4BC22770A07800207FC2 /* AFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB4BC12770A07800207FC2 /* AFont.swift */; };
-		05C077E7277B0D8F00B1BE55 /* AppCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */; };
-		05C077E9277B0F1600B1BE55 /* PreLoaderCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */; };
+		05C077E7277B0D8F00B1BE55 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E6277B0D8F00B1BE55 /* AppCoordinator.swift */; };
+		05C077E9277B0F1600B1BE55 /* PreLoaderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077E8277B0F1600B1BE55 /* PreLoaderCoordinator.swift */; };
 		05C077EB277B237700B1BE55 /* PreloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077EA277B237700B1BE55 /* PreloadViewModel.swift */; };
 		05C077EE277B29DC00B1BE55 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077ED277B29DC00B1BE55 /* NetworkService.swift */; };
 		05C077F0277B2AA100B1BE55 /* AuthorizationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */; };
@@ -56,6 +60,16 @@
 		05C077FD277BAF3300B1BE55 /* CodeTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */; };
 		05C077FF277BB5B600B1BE55 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C077FE277BB5B600B1BE55 /* AuthorizationViewModel.swift */; };
 		05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D28680276CBA2B00078BB3 /* UIButton+.swift */; };
+		05E390F3277E058F00E51F8F /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E390F2277E058F00E51F8F /* SubscribeViewController.swift */; };
+		05E390F5277E059B00E51F8F /* SubscribeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E390F4277E059B00E51F8F /* SubscribeViewController.storyboard */; };
+		05E390F9277E075900E51F8F /* SubscribePriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E390F7277E075900E51F8F /* SubscribePriceTableViewCell.swift */; };
+		05E390FA277E075900E51F8F /* SubscribePriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E390F8277E075900E51F8F /* SubscribePriceTableViewCell.xib */; };
+		05E390FD277E083700E51F8F /* SubscribeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E390FB277E083700E51F8F /* SubscribeInfoTableViewCell.swift */; };
+		05E390FE277E083700E51F8F /* SubscribeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E390FC277E083700E51F8F /* SubscribeInfoTableViewCell.xib */; };
+		05E39101277E084900E51F8F /* SubscribeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E390FF277E084900E51F8F /* SubscribeHeaderTableViewCell.swift */; };
+		05E39102277E084900E51F8F /* SubscribeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E39100277E084900E51F8F /* SubscribeHeaderTableViewCell.xib */; };
+		05E39105277E085500E51F8F /* SubscribeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E39103277E085500E51F8F /* SubscribeButtonTableViewCell.swift */; };
+		05E39106277E085500E51F8F /* SubscribeButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E39104277E085500E51F8F /* SubscribeButtonTableViewCell.xib */; };
 		05ED518F2770C1A500292C9B /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED518E2770C1A500292C9B /* HomeViewController.storyboard */; };
 		05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED51902770C1B300292C9B /* HomeViewController.swift */; };
 		D85CD8DBADD0F48551322DE1 /* Pods_AutorisationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122E30C2EB01269B6A4EF679 /* Pods_AutorisationApp.framework */; };
@@ -91,6 +105,10 @@
 		0543B5752779E3DE0070C9DE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0543B577277A0B080070C9DE /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		0543B57B277A585C0070C9DE /* ForgotPasswodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswodViewController.swift; sourceTree = "<group>"; };
+		057E4AED27843C38002353C4 /* SubscribeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCoordinator.swift; sourceTree = "<group>"; };
+		057E4AEF278442EC002353C4 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		057E4AF12784437D002353C4 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		057E4AF3278455F0002353C4 /* SubscribeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewModel.swift; sourceTree = "<group>"; };
 		05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLoaderViewController.storyboard; sourceTree = "<group>"; };
 		05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderViewController.swift; sourceTree = "<group>"; };
 		05AE7ED42775C8C8000909A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +120,8 @@
 		05B9C05F2771EC5300BC9D88 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		05B9C0612771EC6600BC9D88 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		05BB4BC12770A07800207FC2 /* AFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFont.swift; sourceTree = "<group>"; };
-		05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCordinator.swift; sourceTree = "<group>"; };
-		05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderCordinator.swift; sourceTree = "<group>"; };
+		05C077E6277B0D8F00B1BE55 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		05C077E8277B0F1600B1BE55 /* PreLoaderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderCoordinator.swift; sourceTree = "<group>"; };
 		05C077EA277B237700B1BE55 /* PreloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewModel.swift; sourceTree = "<group>"; };
 		05C077ED277B29DC00B1BE55 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		05C077EF277B2AA100B1BE55 /* AuthorizationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCoordinator.swift; sourceTree = "<group>"; };
@@ -113,6 +131,16 @@
 		05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeTextFieldView.xib; sourceTree = "<group>"; };
 		05C077FE277BB5B600B1BE55 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		05D28680276CBA2B00078BB3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		05E390F2277E058F00E51F8F /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		05E390F4277E059B00E51F8F /* SubscribeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscribeViewController.storyboard; sourceTree = "<group>"; };
+		05E390F7277E075900E51F8F /* SubscribePriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePriceTableViewCell.swift; sourceTree = "<group>"; };
+		05E390F8277E075900E51F8F /* SubscribePriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribePriceTableViewCell.xib; sourceTree = "<group>"; };
+		05E390FB277E083700E51F8F /* SubscribeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		05E390FC277E083700E51F8F /* SubscribeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		05E390FF277E084900E51F8F /* SubscribeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		05E39100277E084900E51F8F /* SubscribeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		05E39103277E085500E51F8F /* SubscribeButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeButtonTableViewCell.swift; sourceTree = "<group>"; };
+		05E39104277E085500E51F8F /* SubscribeButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeButtonTableViewCell.xib; sourceTree = "<group>"; };
 		05ED518E2770C1A500292C9B /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		05ED51902770C1B300292C9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		122E30C2EB01269B6A4EF679 /* Pods_AutorisationApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutorisationApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +221,8 @@
 				05AE7EDD2775E34F000909A5 /* UICollectionVIew+.swift */,
 				05AE7EE02775E49F000909A5 /* IUCollectionViewCell+.swift */,
 				0543B577277A0B080070C9DE /* StoryboardInitializable.swift */,
+				057E4AEF278442EC002353C4 /* UITableView+.swift */,
+				057E4AF12784437D002353C4 /* UITableViewCell+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -200,6 +230,7 @@
 		0530DC512768EE6500EF4548 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				0530DC592768F3DF00EF4548 /* BaseViewContoller */,
 				05C077E5277B0D2100B1BE55 /* Cordinator */,
 				0543B5702779D2AC0070C9DE /* Font */,
 				0530DC3B2768EE4F00EF4548 /* AppDelegate.swift */,
@@ -211,10 +242,10 @@
 		0530DC522768EE7600EF4548 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				05E390F1277E055F00E51F8F /* Subscribe */,
 				05AE7ED32775C8AE000909A5 /* Welcome */,
 				05AE7ECE27746E2C000909A5 /* PreLoader */,
 				05ED518D2770BFC700292C9B /* Home */,
-				0530DC592768F3DF00EF4548 /* BaseViewContoller */,
 				0530DC532768EE8000EF4548 /* Authorization */,
 			);
 			path = ViewController;
@@ -292,7 +323,7 @@
 			children = (
 				05AE7ECF27746E52000909A5 /* PreLoaderViewController.storyboard */,
 				05AE7ED127746E5F000909A5 /* PreLoaderViewController.swift */,
-				05C077E8277B0F1600B1BE55 /* PreLoaderCordinator.swift */,
+				05C077E8277B0F1600B1BE55 /* PreLoaderCoordinator.swift */,
 				05C077EA277B237700B1BE55 /* PreloadViewModel.swift */,
 			);
 			path = PreLoader;
@@ -330,7 +361,7 @@
 		05C077E5277B0D2100B1BE55 /* Cordinator */ = {
 			isa = PBXGroup;
 			children = (
-				05C077E6277B0D8F00B1BE55 /* AppCordinator.swift */,
+				05C077E6277B0D8F00B1BE55 /* AppCoordinator.swift */,
 			);
 			path = Cordinator;
 			sourceTree = "<group>";
@@ -350,6 +381,33 @@
 				05C077FC277BAF3300B1BE55 /* CodeTextFieldView.xib */,
 			);
 			path = CodeTextFieldView;
+			sourceTree = "<group>";
+		};
+		05E390F1277E055F00E51F8F /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				05E390F6277E072E00E51F8F /* Cell */,
+				05E390F2277E058F00E51F8F /* SubscribeViewController.swift */,
+				057E4AF3278455F0002353C4 /* SubscribeViewModel.swift */,
+				05E390F4277E059B00E51F8F /* SubscribeViewController.storyboard */,
+				057E4AED27843C38002353C4 /* SubscribeCoordinator.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		05E390F6277E072E00E51F8F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05E390F7277E075900E51F8F /* SubscribePriceTableViewCell.swift */,
+				05E390F8277E075900E51F8F /* SubscribePriceTableViewCell.xib */,
+				05E390FB277E083700E51F8F /* SubscribeInfoTableViewCell.swift */,
+				05E390FC277E083700E51F8F /* SubscribeInfoTableViewCell.xib */,
+				05E390FF277E084900E51F8F /* SubscribeHeaderTableViewCell.swift */,
+				05E39100277E084900E51F8F /* SubscribeHeaderTableViewCell.xib */,
+				05E39103277E085500E51F8F /* SubscribeButtonTableViewCell.swift */,
+				05E39104277E085500E51F8F /* SubscribeButtonTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		05ED518D2770BFC700292C9B /* Home */ = {
@@ -448,7 +506,12 @@
 				0530DC662769031E00EF4548 /* TextFieldView.xib in Resources */,
 				05AE7ED72775C8CF000909A5 /* WelcomeViewController.storyboard in Resources */,
 				0543B5742779D4450070C9DE /* Poppins-Bold.ttf in Resources */,
+				05E39106277E085500E51F8F /* SubscribeButtonTableViewCell.xib in Resources */,
+				05E390FA277E075900E51F8F /* SubscribePriceTableViewCell.xib in Resources */,
+				05E390F5277E059B00E51F8F /* SubscribeViewController.storyboard in Resources */,
 				05AE7EDC2775DC27000909A5 /* WelcomeTextCollectionViewCell.xib in Resources */,
+				05E390FE277E083700E51F8F /* SubscribeInfoTableViewCell.xib in Resources */,
+				05E39102277E084900E51F8F /* SubscribeHeaderTableViewCell.xib in Resources */,
 				0530DC432768EE4F00EF4548 /* AuthorizationViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +566,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05C077E7277B0D8F00B1BE55 /* AppCordinator.swift in Sources */,
+				05C077E7277B0D8F00B1BE55 /* AppCoordinator.swift in Sources */,
+				05E39101277E084900E51F8F /* SubscribeHeaderTableViewCell.swift in Sources */,
 				05C077F4277B2DD700B1BE55 /* WelcomeViewModel.swift in Sources */,
 				0530DC7227693C3F00EF4548 /* ATextField.swift in Sources */,
 				0530DC6C27690E2E00EF4548 /* AColor.swift in Sources */,
@@ -511,13 +575,16 @@
 				050F85D427707ED00085ADB1 /* ATextView.swift in Sources */,
 				0530DC5D2768F5EF00EF4548 /* UIViewController+.swift in Sources */,
 				05AE7ED227746E5F000909A5 /* PreLoaderViewController.swift in Sources */,
-				05C077E9277B0F1600B1BE55 /* PreLoaderCordinator.swift in Sources */,
+				05C077E9277B0F1600B1BE55 /* PreLoaderCoordinator.swift in Sources */,
+				05E390F3277E058F00E51F8F /* SubscribeViewController.swift in Sources */,
 				05AE7EE12775E49F000909A5 /* IUCollectionViewCell+.swift in Sources */,
 				05AE7ED52775C8C8000909A5 /* WelcomeViewController.swift in Sources */,
+				05E390FD277E083700E51F8F /* SubscribeInfoTableViewCell.swift in Sources */,
 				0530DC582768F3C000EF4548 /* Logger.swift in Sources */,
 				0530DC402768EE4F00EF4548 /* AuthorizationViewController.swift in Sources */,
 				05ED51912770C1B300292C9B /* HomeViewController.swift in Sources */,
 				05AE7EDB2775DC27000909A5 /* WelcomeTextCollectionViewCell.swift in Sources */,
+				05E39105277E085500E51F8F /* SubscribeButtonTableViewCell.swift in Sources */,
 				05D28681276CBA2B00078BB3 /* UIButton+.swift in Sources */,
 				05C077EB277B237700B1BE55 /* PreloadViewModel.swift in Sources */,
 				05B9C0602771EC5300BC9D88 /* EmailValidator.swift in Sources */,
@@ -525,11 +592,14 @@
 				05AE7EDE2775E34F000909A5 /* UICollectionVIew+.swift in Sources */,
 				0530DC9D276AA74100EF4548 /* UILabel+.swift in Sources */,
 				0530DC6E2769108000EF4548 /* UIColor+.swift in Sources */,
+				057E4AF22784437D002353C4 /* UITableViewCell+.swift in Sources */,
+				05E390F9277E075900E51F8F /* SubscribePriceTableViewCell.swift in Sources */,
 				0530DC762769F56600EF4548 /* String+.swift in Sources */,
 				05C077EE277B29DC00B1BE55 /* NetworkService.swift in Sources */,
 				0530DC3E2768EE4F00EF4548 /* SceneDelegate.swift in Sources */,
 				0543B57C277A585C0070C9DE /* ForgotPasswodViewController.swift in Sources */,
 				0543B578277A0B090070C9DE /* StoryboardInitializable.swift in Sources */,
+				057E4AF4278455F0002353C4 /* SubscribeViewModel.swift in Sources */,
 				05C077FF277BB5B600B1BE55 /* AuthorizationViewModel.swift in Sources */,
 				05BB4BC22770A07800207FC2 /* AFont.swift in Sources */,
 				0530DC552768F33900EF4548 /* UITextField+.swift in Sources */,
@@ -538,10 +608,12 @@
 				0530DC6A27690C5900EF4548 /* AView.swift in Sources */,
 				05C077FA277BAF2400B1BE55 /* CodeTextFieldView.swift in Sources */,
 				05C077F0277B2AA100B1BE55 /* AuthorizationCoordinator.swift in Sources */,
+				057E4AEE27843C38002353C4 /* SubscribeCoordinator.swift in Sources */,
 				05B9C0622771EC6600BC9D88 /* PasswordValidator.swift in Sources */,
 				0530DC682769033000EF4548 /* TextFieldView.swift in Sources */,
 				05C077F8277BA05100B1BE55 /* ForgotPasswordViewModel.swift in Sources */,
 				0530DC7427693F4600EF4548 /* AButton.swift in Sources */,
+				057E4AF0278442EC002353C4 /* UITableView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
